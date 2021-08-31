@@ -1,13 +1,24 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Button from '@material-ui/core/Button';
-
+import './App.css';
+import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+import { Button, Paper } from '@material-ui/core';
 function App() {
   return (
-    <Button variant="contained" color="primary">
-      Hello World
-    </Button>
+    <Container maxWidth="sm" className="App">
+      <Paper>
+        <Typography variant="h4" component="h1" gutterBottom>
+          Create React App + Material-UI
+        </Typography>
+        <Button variant="contained" color="primary">
+          Primary Button
+        </Button>
+        <Button variant="contained" color="secondary">
+          Secondary Button
+        </Button>
+      </Paper>
+    </Container>
   );
 }
-
-ReactDOM.render(<App />, document.querySelector('#app'));
+export default App;
