@@ -1,16 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ReactDOM from 'react-dom';
+import Button from '@material-ui/core/Button';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Hello from V3</h1>
-      </header>
-    </div>
+    <Button variant="contained" color="primary">
+      Hello World
+    </Button>
   );
 }
 
-export default App;
+ReactDOM.render(<App />, document.querySelector('#app'));
