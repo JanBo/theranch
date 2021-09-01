@@ -72,6 +72,8 @@ useEffect(() => {
         <GlobalStyle />
         <Hero />
         <Products heading='Choose your favorite' data={productData} />
+        {/* <Feature /> */}
+        <Footer />
 
     <div className='App'>
      <button onClick={createCustomer}>Create Customer</button> 
