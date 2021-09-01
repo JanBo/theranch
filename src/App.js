@@ -1,11 +1,16 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { GlobalStyle } from './globalStyles';
+import Hero from './components/Hero';
+
+
 import './App.css';
 import { useEffect, useState } from 'react';
-import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import { Button, Paper } from '@material-ui/core';
-//import RecipeReviewCard from './components/RecipeReviewCard';
+// import Container from '@material-ui/core/Container';
+// import Typography from '@material-ui/core/Typography';
+// import Box from '@material-ui/core/Box';
+// import { Button, Paper } from '@material-ui/core';
+// //import RecipeReviewCard from './components/RecipeReviewCard';
 import { DataStore } from '@aws-amplify/datastore';
 import { Custome } from './models';
 
@@ -59,7 +64,10 @@ useEffect(() => {
   }
 
   return (
-<>
+    <Router>
+        <GlobalStyle />
+        <Hero />
+
     <div className='App'>
      <button onClick={createCustomer}>Create Customer</button> 
      
@@ -103,7 +111,7 @@ useEffect(() => {
       </Paper>
     </Container>  */}
 
-</>
+</Router>
 
   );
 }
