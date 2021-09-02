@@ -1,4 +1,5 @@
 import React from 'react';
+import { productData } from './data';
 import {
   ProductsContainer,
   ProductWrapper,
@@ -12,12 +13,12 @@ import {
   ProductButton
 } from './ProductsElements';
 
-const Products = ({ heading, data }) => {
+const Products = ({ heading }) => {
   return (
     <ProductsContainer>
       <ProductsHeading>{heading}</ProductsHeading>
       <ProductWrapper>
-        {data.map((product, index) => {
+        {productData.map((product, index) => {
           return (
             <ProductCard key={index}>
               <ProductImg src={product.img} alt={product.alt} />

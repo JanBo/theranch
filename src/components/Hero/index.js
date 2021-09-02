@@ -17,6 +17,10 @@ const Hero = () => {
     setIsOpen(!isOpen);
   };
 
+  function placeOrder() {
+    alert('Hello!');
+  }
+
   return (
     <HeroContainer>
       <Navbar toggle={toggle} />
@@ -25,7 +29,7 @@ const Hero = () => {
         <HeroItems>
           <HeroH1>Beef</HeroH1>
           <HeroP>Colorado Ranch Raised</HeroP>
-          <HeroBtn>Place Order</HeroBtn>
+          <HeroBtn onClick={placeOrder}>Place Order</HeroBtn>
         </HeroItems>
       </HeroContent>
     </HeroContainer>

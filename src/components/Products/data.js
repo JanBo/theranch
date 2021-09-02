@@ -21,7 +21,7 @@ export const productData = [
     name: '1/2 Beef',
     desc:
       ' A half of a beef typically is about 400lbs of premium cuts and hamburger',
-    price: '$1899.99',
+    price: '$799.99',
     button: 'Add to Cart'
   },
   {
@@ -30,7 +30,7 @@ export const productData = [
     name: '1 Beef',
     desc:
       ' A whole of a beef typically is about 800lbs of premium cuts and hamburger',
-    price: '$3799.99',
+    price: '$3749.99',
     button: 'Add to Cart'
   }
 ];
