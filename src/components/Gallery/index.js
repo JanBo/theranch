@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Navbar from '../Navbar';
+import Sidebar from '../Sidebar';
 import {
    GalleryContainer,
    GalleryWrapper,
@@ -34,13 +36,23 @@ const Img15 = 'https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_488
 
 
 const Gallery = ({ heading, data }) => {
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
+
+
   return (
     <GalleryContainer>
-     <GalleryHeading>{heading}</GalleryHeading>
+     <GalleryHeading>Pictures from Bamber Ranch</GalleryHeading>
     <GalleryWrapper>
+      <Navbar toggle={toggle} />
+      <Sidebar isOpen={isOpen} toggle={toggle} />
         {/* {data.map((Gallery, index) => { */}
           {/* return ( */}
-            <GalleryTitle>{Gallery.name}</GalleryTitle>
+            {/* <GalleryTitle>Hallo</GalleryTitle> */}
             <img class="item" src={Img1} alt="The Ranch 1"></img>
             <img class="item" src={Img2} alt="The Ranch 2"></img>
             <img class="item" src={Img3} alt="The Ranch 3"></img>

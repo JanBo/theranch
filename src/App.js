@@ -60,17 +60,17 @@ useEffect(() => {
           <Route path='/' exact component={Hero} />
           {/* <Route path='/product' component={Products}   /> */}
           {/* <Route exact path='/products' component={Products} title={`Choose your favorite`} />  */}
-          <Route exact path='/products' render={() => <Products title={`Choose your favorite`} />} />
-           /> 
+          <Route exact path='/products' component={Products} />
+           {/* render={() => <Products title={`Choose your favorite`} />} /> */}
           {/*heading="Choose your favorite" data={productData} */}
           <Route path='/gallery' component={Gallery} />
           <Route path='/aboutus' component={AboutUs} />
           <Route path='/signup' component={SignUp} />
         </Switch>
         {/* <Hero /> */}
-        <Products heading='Choose your favorite' />
+        {/* <Products heading='Choose your favorite' />
         <AboutUs heading='About us'/>
-        <Gallery heading='Gallery' /> 
+        <Gallery heading='Gallery' />  */}
         {/* <Feature /> */}
 
         <Footer />

@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Navbar from '../Navbar';
+import Sidebar from '../Sidebar';
 import { productData } from './data';
 import {
   ProductsContainer,
@@ -13,10 +15,21 @@ import {
   ProductButton
 } from './ProductsElements';
 
+
+
 const Products = ({ heading }) => {
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <ProductsContainer>
-      <ProductsHeading>{heading}</ProductsHeading>
+      <Navbar toggle={toggle} />
+      <Sidebar isOpen={isOpen} toggle={toggle} />
+      <ProductsHeading>Choose your favorite</ProductsHeading>
       <ProductWrapper>
         {productData.map((product, index) => {
           return (

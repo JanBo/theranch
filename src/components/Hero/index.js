@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import Navbar from '../Navbar';
+// import Products from '../Products';
 import Sidebar from '../Sidebar';
 import {
   HeroContainer,
@@ -13,12 +15,16 @@ import {
 const Hero = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const history = useHistory();
+
   const toggle = () => {
     setIsOpen(!isOpen);
   };
 
-  function placeOrder() {
-    alert('Hello!');
+
+  const routeChange = () => { 
+    let path = `/Products`; 
+    history.push(path);
   }
 
   return (
@@ -29,7 +35,7 @@ const Hero = () => {
         <HeroItems>
           <HeroH1>Beef</HeroH1>
           <HeroP>Colorado Ranch Raised</HeroP>
-          <HeroBtn onClick={placeOrder}>Place Order</HeroBtn>
+          <HeroBtn onClick={routeChange}>Place Order</HeroBtn>
         </HeroItems>
       </HeroContent>
     </HeroContainer>
