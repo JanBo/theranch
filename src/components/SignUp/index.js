@@ -9,6 +9,7 @@ import { useForm } from "react-hook-form";
 // import Box from '@material-ui/core/Box';
 // import { Button, Paper } from '@material-ui/core';
 // //import RecipeReviewCard from './components/RecipeReviewCard';
+import { Button, TextField } from "@material-ui/core";
 import { DataStore } from "@aws-amplify/datastore";
 import { Custome } from "./../../models";
 // import { RanchPrice } "./../../models";
@@ -22,6 +23,7 @@ import {
   SignUpH1,
   SignUpP,
   SignUpBtn,
+  StyleWrap,
 } from "./SignUpElements";
 
 const SignUp = () => {
@@ -52,63 +54,63 @@ const SignUp = () => {
     func();
   }, []);
 
-  const createCustomer = async () => {
-    const cust = {
-      name: window.prompt("cust name"),
-      address: window.prompt("address"),
-      phone: window.prompt("phone"),
-      email: window.prompt("email address"),
-    };
+  const createCustomer = async (cust) => {
+    // const cust2 = {
+    //   name: window.prompt("cust name"),
+    //   address: window.prompt("address"),
+    //   phone: window.prompt("phone"),
+    //   email: window.prompt("email address"),
+    // };
+
+    /* await DataStore.save(new Custome(cust2));*/
 
     const newCust = await DataStore.save(new Custome(cust));
 
+    // const cust2 = {
+    //   name: "Jonas",
+    //   address: "Store",
+    //   phone: "720-555-555",
+    //   email: "Jonas.store@regjeringen.no",
+    // };
+    // const newCust = cust;
+
+    // console.log(newCust);
     console.log(newCust);
   };
+
+  function Form() {
+    const { register, handleSubmit } = useForm();
+
+    return (
+      <>
+        <h1>New Customer</h1>
+        <form onSubmit={handleSubmit((data) => createCustomer(data))}>
+          {/* <form onSubmit={handleSubmit((data) => createCustomer(data))}> */}
+          <label>Full name</label>
+          <TextField {...register("name", { required: true })} />
+          <label>Address</label>
+          <TextField {...register("address", { required: true })} />
+          <label>Phone</label>
+          <TextField {...register("phone", { required: true })} />
+          <label>Email</label>
+          <TextField {...register("email", { required: true })} />
+          <Button type="submit" variant="contained" color="primary">
+            Submit
+          </Button>
+        </form>
+      </>
+    );
+  }
 
   return (
     <SignUpContainer>
       <Navbar toggle={toggle} />
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <SignUpContent>
-        <SignUpItems>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <label>First Name: </label>{" "}
-            <input
-              {...register("firstName", { required: true, maxLength: 20 })}
-            />
-            <br />
-            <label>Last Name: </label>
-            <input
-              {...register("lastName", { pattern: /^[A-Za-z]+$/i })}
-            />{" "}
-            <br />
-            <label>Address: </label>
-            <input
-              type="string"
-              {...register("address", { required: true, maxLength: 20 })}
-            />{" "}
-            <br />
-          </form>
-          <SignUpBtn onClick={placeOrder}>Sign up</SignUpBtn>
-        </SignUpItems>
+        <StyleWrap>
+          <Form />
+        </StyleWrap>
       </SignUpContent>
-
-      <div className="App">
-        <button onClick={createCustomer}>Create Customer</button>
-        {custs.map((cust) => (
-          <div key={cust.id}>
-            <h1>{cust.name}</h1>
-            <p>{cust.address}</p>
-          </div>
-        ))}
-        <br />
-        {/* {custs.map((cust) => (
-          <div key={cust.id}>
-            <h1>{cust.name}</h1>
-            <p>{cust.address}</p>
-          </div>
-        ))} */}
-      </div>
     </SignUpContainer>
   );
 };
