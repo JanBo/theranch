@@ -1,0 +1,35 @@
+{
+  "paths": [
+    {
+      "name": "/price",
+      "lambdaFunction": "beefprice",
+      "privacy": {
+        "open": true
+      },
+      "policyResourceName": "/price"
+    }
+  ],
+  "resourceName": "price",
+  "apiName": "price",
+  "functionArns": [
+    {
+      "lambdaFunction": "beefprice"
+    }
+  ],
+  "privacy": {
+    "auth": 0,
+    "unauth": 0,
+    "authRoleName": "amplify-amplify4a66fbec0c554-staging-153710-authRole",
+    "unAuthRoleName": "amplify-amplify4a66fbec0c554-staging-153710-unauthRole"
+  },
+  "dependsOn": [
+    {
+      "category": "function",
+      "resourceName": "beefprice",
+      "attributes": [
+        "Name",
+        "Arn"
+      ]
+    }
+  ]
+}

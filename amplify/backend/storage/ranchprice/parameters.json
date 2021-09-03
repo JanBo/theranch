@@ -1,0 +1,5 @@
+{
+    "tableName": "ranchprice",
+    "partitionKeyName": "beefamount",
+    "partitionKeyType": "S"
+}

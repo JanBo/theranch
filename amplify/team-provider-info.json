@@ -10,6 +10,18 @@
       "StackName": "amplify-amplify4a66fbec0c554-staging-153710",
       "StackId": "arn:aws:cloudformation:us-east-1:162924701752:stack/amplify-amplify4a66fbec0c554-staging-153710/4efcdf20-0a71-11ec-8490-12e727a79a85",
       "AmplifyAppId": "d2u05lb7wslmtp"
+    },
+    "categories": {
+      "function": {
+        "ranchpriceTriggerba88bc7c": {
+          "deploymentBucketName": "amplify-amplify4a66fbec0c554-staging-153710-deployment",
+          "s3Key": "amplify-builds/ranchpriceTriggerba88bc7c-6644513842766c79454d-build.zip"
+        },
+        "beefprice": {
+          "deploymentBucketName": "amplify-amplify4a66fbec0c554-staging-153710-deployment",
+          "s3Key": "amplify-builds/beefprice-67564d35584c68304378-build.zip"
+        }
+      }
     }
   }
 }
