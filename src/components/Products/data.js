@@ -27,7 +27,7 @@ export const productData = [
     alt: "Whole Beef",
     name: "1 Beef",
     desc: " A whole of a beef typically is about 800lbs of premium cuts and hamburger",
-    price: "$3749.99",
+    price: "$3495.99",
     button: "Add to Cart",
   },
 ];

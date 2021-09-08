@@ -14,6 +14,8 @@ import { DataStore } from "@aws-amplify/datastore";
 import { Custome } from "./../../models";
 // import { RanchPrice } "./../../models";
 
+import { useHistory } from "react-router-dom";
+
 import Navbar from "../Navbar";
 import Sidebar from "../Sidebar";
 import {
@@ -26,6 +28,13 @@ import {
   StyleWrap,
 } from "./SignUpElements";
 
+type FormData = {
+  name: string,
+  address: string,
+  phone: string,
+  email: string,
+};
+
 const SignUp = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -33,71 +42,69 @@ const SignUp = () => {
     setIsOpen(!isOpen);
   };
 
-  function placeOrder() {
-    alert("Hello!");
-  }
-
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
-
   const [custs, setCusts] = useState([]);
+  const [saved, setSaved] = useState(false);
   // const [prices, setPrices] = useState([]);
 
-  useEffect(() => {
-    const func = async () => {
-      const models = await DataStore.query(Custome);
-      setCusts(models);
+  // useEffect(() => {
+  //   const func = async () => {
+  //     const models = await DataStore.query(Custome);
+  //     setCusts(models);
 
-      // const pris = await DataStore.query(ranchprice);
-    };
+  //     // const pris = await DataStore.query(ranchprice);
+  //   };
 
-    func();
-  }, []);
+  //   func();
+  // }, []);
 
   const createCustomer = async (cust) => {
-    // const cust2 = {
-    //   name: window.prompt("cust name"),
-    //   address: window.prompt("address"),
-    //   phone: window.prompt("phone"),
-    //   email: window.prompt("email address"),
-    // };
-
-    /* await DataStore.save(new Custome(cust2));*/
-
     const newCust = await DataStore.save(new Custome(cust));
-
-    // const cust2 = {
-    //   name: "Jonas",
-    //   address: "Store",
-    //   phone: "720-555-555",
-    //   email: "Jonas.store@regjeringen.no",
-    // };
-    // const newCust = cust;
-
-    // console.log(newCust);
+    setSaved(true);
     console.log(newCust);
   };
 
   function Form() {
-    const { register, handleSubmit } = useForm();
+    const {
+      register,
+      formState: { errors },
+      handleSubmit,
+    } = useForm();
 
     return (
+      // {saved && (
       <>
         <h1>New Customer</h1>
         <form onSubmit={handleSubmit((data) => createCustomer(data))}>
           {/* <form onSubmit={handleSubmit((data) => createCustomer(data))}> */}
           <label>Full name</label>
           <TextField {...register("name", { required: true })} />
+          {errors.name && <div>Name is required</div>}
           <label>Address</label>
           <TextField {...register("address", { required: true })} />
+          {errors.address && <span>Address is required</span>}
           <label>Phone</label>
           <TextField {...register("phone", { required: true })} />
+          {errors.phone && <div>Phone is required</div>}
           <label>Email</label>
           <TextField {...register("email", { required: true })} />
+          {errors.email && <span>Email is required</span>}
           <Button type="submit" variant="contained" color="primary">
             Submit
           </Button>
         </form>
+        {saved && (
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <h1>
+              Thank you for registering, we will contact you within 24 hours!
+            </h1>
+          </div>
+        )}
       </>
     );
   }

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const GalleryContainer = styled.div`
   /* width: 100vw; */
@@ -22,10 +22,10 @@ export const GalleryCard = styled.div`
 `;
 
 export const GalleryImg = styled.img`
-  height: 300px;
-  min-width: 300px;
-  max-width: 100%;
-  box-shadow: 8px 8px #fdc500;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+  justify-content: space-evenly;
 `;
 
 export const GalleryHeading = styled.h1`
@@ -72,3 +72,14 @@ export const GalleryButton = styled.button`
     color: #000;
   }
 `;
+
+// export const ImageContainer = .container {
+//      display: flex;
+//      flex-wrap: wrap;
+//      padding: 5px;
+//      justify-content: space-evenly;
+// }
+
+// export const ImageItem = .item {
+//      margin: 5px;
+// }
