@@ -13,16 +13,29 @@
     },
     "categories": {
       "function": {
-        "ranchpriceTriggerba88bc7c": {
-          "deploymentBucketName": "amplify-amplify4a66fbec0c554-staging-153710-deployment",
-          "s3Key": "amplify-builds/ranchpriceTriggerba88bc7c-6644513842766c79454d-build.zip"
-        },
-        "beefprice": {
-          "deploymentBucketName": "amplify-amplify4a66fbec0c554-staging-153710-deployment",
-          "s3Key": "amplify-builds/beefprice-67564d35584c68304378-build.zip"
-        },
         "meatpricefunction": {
           "deploymentBucketName": "amplify-amplify4a66fbec0c554-staging-153710-deployment",
+          "s3Key": "amplify-builds/meatpricefunction-4c414643357058566c62-build.zip"
+        }
+      }
+    }
+  },
+  "prod": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-theranch-prod-145737-authRole",
+      "UnauthRoleArn": "arn:aws:iam::162924701752:role/amplify-theranch-prod-145737-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::162924701752:role/amplify-theranch-prod-145737-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-theranch-prod-145737-deployment",
+      "UnauthRoleName": "amplify-theranch-prod-145737-unauthRole",
+      "StackName": "amplify-theranch-prod-145737",
+      "StackId": "arn:aws:cloudformation:us-east-1:162924701752:stack/amplify-theranch-prod-145737/92223280-1667-11ec-aef3-0e892388aa03",
+      "AmplifyAppId": "d2u05lb7wslmtp"
+    },
+    "categories": {
+      "function": {
+        "meatpricefunction": {
+          "deploymentBucketName": "amplify-theranch-prod-145737-deployment",
           "s3Key": "amplify-builds/meatpricefunction-4c414643357058566c62-build.zip"
         }
       }

@@ -36,10 +36,10 @@ const Testimonial = () => {
         <br />
         <br />
         <br />
-        As a family with 4 boys we eat a lot of both steaks and ground meat.
+        As a family with 2 boys we eat a lot of both steaks and ground meat.
         <br />
         <br />
-        Buying from Bamber Ranch has helped us cut down costs while allowing our
+        Buying from the Ranch has helped us cut down costs while allowing our
         family to eat a superior product. We have bought from them twice and
         have just ordered another 1/2 steer.
         <br />

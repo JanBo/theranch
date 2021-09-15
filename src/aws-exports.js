@@ -9,11 +9,6 @@ const awsmobile = {
     "aws_appsync_apiKey": "da2-x65usgc7krb3ngtk6mqqiswri4",
     "aws_cloud_logic_custom": [
         {
-            "name": "price",
-            "endpoint": "https://7n5wk9yukl.execute-api.us-east-1.amazonaws.com/staging",
-            "region": "us-east-1"
-        },
-        {
             "name": "meatpriceapi",
             "endpoint": "https://ez9ve7jpyc.execute-api.us-east-1.amazonaws.com/staging",
             "region": "us-east-1"
@@ -21,10 +16,6 @@ const awsmobile = {
     ],
     "aws_dynamodb_all_tables_region": "us-east-1",
     "aws_dynamodb_table_schemas": [
-        {
-            "tableName": "ranchprice-staging",
-            "region": "us-east-1"
-        },
         {
             "tableName": "meatpricedb-staging",
             "region": "us-east-1"
