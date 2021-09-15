@@ -44,7 +44,7 @@ const AboutUs = () => {
         <br />
         <br />
         On the ranch there is a dog named Rooster (also pictured) and we have
-        about 10 quarter horses who like out cattle roams around freely on our
+        about 10 quarter horses who like our cattle roams around freely on our
         Ranch.
       </AboutUsContent>
 

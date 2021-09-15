@@ -7,6 +7,7 @@ import Products from "./components/Products";
 import Gallery from "./components/Gallery";
 import AboutUs from "./components/AboutUs";
 import SignUp from "./components/SignUp";
+import Testimonial from "./components/Testimonial";
 
 // import Feature from './components/Feature';
 import Footer from "./components/Footer";
@@ -18,9 +19,9 @@ import { useEffect, useState } from "react";
 // import Box from '@material-ui/core/Box';
 // import { Button, Paper } from '@material-ui/core';
 // //import RecipeReviewCard from './components/RecipeReviewCard';
-import { DataStore } from "@aws-amplify/datastore";
+//import { DataStore } from "@aws-amplify/datastore";
 import config from "./aws-exports";
-import { Custome } from "./models";
+//import { Custome } from "./models";
 import Amplify from "aws-amplify";
 
 Amplify.configure(config);
@@ -37,6 +38,7 @@ function App() {
         {/* render={() => <Products title={`Choose your favorite`} />} /> */}
         {/*heading="Choose your favorite" data={productData} */}
         <Route path="/gallery" component={Gallery} />
+        <Route path="/testimonial" component={Testimonial} />
         <Route path="/aboutus" component={AboutUs} />
         <Route path="/signup" component={SignUp} />
       </Switch>

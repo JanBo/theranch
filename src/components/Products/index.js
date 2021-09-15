@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
-import Navbar from '../Navbar';
-import Sidebar from '../Sidebar';
-import { productData } from './data';
+import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
+import Navbar from "../Navbar";
+import Sidebar from "../Sidebar";
+import { productData } from "./data";
+import { DataStore } from "@aws-amplify/datastore";
+import { API } from "aws-amplify";
+
 import {
   ProductsContainer,
   ProductWrapper,
@@ -12,18 +16,30 @@ import {
   ProductInfo,
   ProductDesc,
   ProductPrice,
-  ProductButton
-} from './ProductsElements';
-
-
+  ProductButton,
+} from "./ProductsElements";
 
 const Products = ({ heading }) => {
-
   const [isOpen, setIsOpen] = useState(false);
+  const history = useHistory();
 
   const toggle = () => {
     setIsOpen(!isOpen);
   };
+
+  const routeChange = () => {
+    let path = `/signup`;
+    history.push(path);
+  };
+
+  useEffect(() => {
+    API.get("beefprice", "/").then((prices) => console.log(prices));
+    //const models = await DataStore.query(Custome);
+    //setCusts(models);
+
+    //const pris = await DataStore.query(ranchprice);
+    //console.log("Fetching Prices");
+  }, []);
 
   return (
     <ProductsContainer>
@@ -39,7 +55,9 @@ const Products = ({ heading }) => {
                 <ProductTitle>{product.name}</ProductTitle>
                 <ProductDesc>{product.desc}</ProductDesc>
                 <ProductPrice>{product.price}</ProductPrice>
-                <ProductButton>{product.button}</ProductButton>
+                <ProductButton onClick={routeChange}>
+                  {product.button}
+                </ProductButton>
               </ProductInfo>
             </ProductCard>
           );
