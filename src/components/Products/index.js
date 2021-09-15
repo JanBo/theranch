@@ -33,7 +33,7 @@ const Products = ({ heading }) => {
   };
 
   useEffect(() => {
-    API.get("meatpriceapi", "/meatprice").then((prices) =>
+    API.get("meatpriceapi", "/meatprice/type").then((prices) =>
       console.log(prices)
     );
     //const models = await DataStore.query(Custome);
