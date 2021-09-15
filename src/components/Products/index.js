@@ -33,13 +33,15 @@ const Products = ({ heading }) => {
   };
 
   useEffect(() => {
-    API.get("beefprice", "/").then((prices) => console.log(prices));
+    API.get("meatpriceapi", "/meatprice").then((prices) =>
+      console.log(prices)
+    );
     //const models = await DataStore.query(Custome);
     //setCusts(models);
 
     //const pris = await DataStore.query(ranchprice);
     //console.log("Fetching Prices");
-  }, []);
+  }, []); // only run this function on the first mount
 
   return (
     <ProductsContainer>

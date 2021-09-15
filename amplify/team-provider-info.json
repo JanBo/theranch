@@ -20,6 +20,10 @@
         "beefprice": {
           "deploymentBucketName": "amplify-amplify4a66fbec0c554-staging-153710-deployment",
           "s3Key": "amplify-builds/beefprice-67564d35584c68304378-build.zip"
+        },
+        "meatpricefunction": {
+          "deploymentBucketName": "amplify-amplify4a66fbec0c554-staging-153710-deployment",
+          "s3Key": "amplify-builds/meatpricefunction-4c414643357058566c62-build.zip"
         }
       }
     }

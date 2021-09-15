@@ -33,6 +33,20 @@
           ]
         }
       ]
+    },
+    "meatpriceapi": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "meatpricefunction",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ]
     }
   },
   "function": {
@@ -70,10 +84,33 @@
           }
         }
       ]
+    },
+    "meatpricefunction": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "storage",
+          "resourceName": "meatpricedb",
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "attributeEnvMap": {
+            "Name": "TABLE_NAME",
+            "Arn": "TABLE_ARN"
+          }
+        }
+      ]
     }
   },
   "storage": {
     "ranchprice": {
+      "service": "DynamoDB",
+      "providerPlugin": "awscloudformation"
+    },
+    "meatpricedb": {
       "service": "DynamoDB",
       "providerPlugin": "awscloudformation"
     }

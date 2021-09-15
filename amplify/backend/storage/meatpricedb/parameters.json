@@ -1,0 +1,7 @@
+{
+    "tableName": "meatpricedb",
+    "partitionKeyName": "type",
+    "partitionKeyType": "S",
+    "sortKeyName": "price",
+    "sortKeyType": "N"
+}
