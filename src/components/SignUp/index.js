@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 //import InputMask from "react-input-mask";
 // import { yupResolver } from "@hookform/resolvers/yup";
@@ -13,34 +13,34 @@ import { useForm } from "react-hook-form";
 import {
   Button,
   TextField,
-  Select,
-  InputLabel,
-  MenuItem,
+  // Select,
+  // InputLabel,
+  // MenuItem,
 } from "@material-ui/core";
 import { DataStore } from "@aws-amplify/datastore";
 import { Custome } from "./../../models";
 // import { RanchPrice } "./../../models";
 
-import { useHistory } from "react-router-dom";
+//import { useHistory } from "react-router-dom";
 
 import Navbar from "../Navbar";
 import Sidebar from "../Sidebar";
 import {
   SignUpContainer,
   SignUpContent,
-  SignUpItems,
-  SignUpH1,
-  SignUpP,
-  SignUpBtn,
+  // SignUpItems,
+  // SignUpH1,
+  // SignUpP,
+  // SignUpBtn,
   StyleWrap,
 } from "./SignUpElements";
 
-type FormData = {
-  name: string,
-  address: string,
-  phone: string,
-  email: string,
-};
+// type FormData = {
+//   name: string,
+//   address: string,
+//   phone: string,
+//   email: string,
+// };
 
 const SignUp = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,7 +49,7 @@ const SignUp = () => {
     setIsOpen(!isOpen);
   };
 
-  const [custs, setCusts] = useState([]);
+  //const [custs, setCusts] = useState([]);
   const [saved, setSaved] = useState(false);
   // const [beef, setBeef] = useState("");
 

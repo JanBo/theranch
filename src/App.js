@@ -13,7 +13,7 @@ import Testimonial from "./components/Testimonial";
 import Footer from "./components/Footer";
 
 import "./App.css";
-import { useEffect, useState } from "react";
+//import { useEffect, useState } from "react";
 // import Container from '@material-ui/core/Container';
 // import Typography from '@material-ui/core/Typography';
 // import Box from '@material-ui/core/Box';

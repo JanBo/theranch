@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import Navbar from "../Navbar";
 import Sidebar from "../Sidebar";
-import {
-  AboutUsContainer,
-  AboutUsContent,
-  AboutUsItems,
-  AboutUsP,
-  AboutUsButton,
-  AboutUsHeading,
-} from "./AboutUsElements";
+import { AboutUsContainer, AboutUsContent } from "./AboutUsElements";
+
+//  AboutUsItems,
+//   AboutUsP,
+//   AboutUsButton,
+//   AboutUsHeading,
 
 const AboutUs = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,9 +15,9 @@ const AboutUs = () => {
     setIsOpen(!isOpen);
   };
 
-  function goBack() {
-    alert("Hello!");
-  }
+  // function goBack() {
+  //   alert("Hello!");
+  // }
 
   return (
     <AboutUsContainer>

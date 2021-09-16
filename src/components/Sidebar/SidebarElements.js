@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import { FaTimes } from 'react-icons/fa';
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { FaTimes } from "react-icons/fa";
 
 export const SidebarContainer = styled.aside`
   position: fixed;
@@ -12,7 +12,7 @@ export const SidebarContainer = styled.aside`
   align-items: center;
   top: 0;
   transition: 0.3s ease-in-out;
-  right: ${({ isOpen }) => (isOpen ? '0' : '-1000px')};
+  right: ${({ isOpen }) => (isOpen ? "0" : "-1000px")};
 
   @media screen and (max-width: 400px) {
     width: 100%;
@@ -37,11 +37,11 @@ export const Icon = styled.div`
 export const SidebarMenu = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 80px);
+  grid-template-rows: repeat(6, 80px);
   text-align: center;
 
   @media screen and (max-width: 480px) {
-    grid-template-rows: repeat(3, 60px);
+    grid-template-rows: repeat(6, 60px);
   }
 `;
 

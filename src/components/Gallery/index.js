@@ -5,7 +5,7 @@ import {
   GalleryContainer,
   GalleryWrapper,
   GalleryHeading,
-  GalleryTitle,
+  //GalleryTitle,
   //  GalleryCard,
   //  GalleryImg,
   //  GalleryInfo,

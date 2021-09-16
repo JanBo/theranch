@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import Navbar from "../Navbar";
 import Sidebar from "../Sidebar";
 import { productData } from "./data";
-import { DataStore } from "@aws-amplify/datastore";
+//import { DataStore } from "@aws-amplify/datastore";
 import { API } from "aws-amplify";
 
 import {
@@ -21,6 +21,7 @@ import {
 
 const Products = ({ heading }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [pris, setPris] = useState();
   const history = useHistory();
 
   const toggle = () => {
@@ -35,8 +36,10 @@ const Products = ({ heading }) => {
   useEffect(() => {
     //API.get("meatpriceapi", "/meatprice/type").then((prices) =>
     API.get("meatpriceapi", "/meatprice/type").then((prices) =>
-      console.log(prices)
+      //console.log(prices)
+      setPris(prices)
     );
+    //console.log(price);
     //const models = await DataStore.query(Custome);
     //setCusts(models);
 
@@ -57,7 +60,8 @@ const Products = ({ heading }) => {
               <ProductInfo>
                 <ProductTitle>{product.name}</ProductTitle>
                 <ProductDesc>{product.desc}</ProductDesc>
-                <ProductPrice>{product.price}</ProductPrice>
+                {/* {product.price} */}
+                <ProductPrice></ProductPrice>
                 <ProductButton onClick={routeChange}>
                   {product.button}
                 </ProductButton>
