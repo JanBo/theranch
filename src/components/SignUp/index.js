@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+//import InputMask from "react-input-mask";
 // import { yupResolver } from "@hookform/resolvers/yup";
 // import * as Yup from "yup";
 
@@ -9,7 +10,13 @@ import { useForm } from "react-hook-form";
 // import Box from '@material-ui/core/Box';
 // import { Button, Paper } from '@material-ui/core';
 // //import RecipeReviewCard from './components/RecipeReviewCard';
-import { Button, TextField } from "@material-ui/core";
+import {
+  Button,
+  TextField,
+  Select,
+  InputLabel,
+  MenuItem,
+} from "@material-ui/core";
 import { DataStore } from "@aws-amplify/datastore";
 import { Custome } from "./../../models";
 // import { RanchPrice } "./../../models";
@@ -44,6 +51,11 @@ const SignUp = () => {
 
   const [custs, setCusts] = useState([]);
   const [saved, setSaved] = useState(false);
+  // const [beef, setBeef] = useState("");
+
+  // const handleChange = (event) => {
+  //   setBeef(event.target.value);
+  // };
   // const [prices, setPrices] = useState([]);
 
   // useEffect(() => {
@@ -77,17 +89,52 @@ const SignUp = () => {
         <form onSubmit={handleSubmit((data) => createCustomer(data))}>
           {/* <form onSubmit={handleSubmit((data) => createCustomer(data))}> */}
           <label>Full name</label>
-          <TextField {...register("name", { required: true })} />
+          <TextField
+            onChange={() => setSaved(false)}
+            {...register("name", { required: true, maxLength: 40 })}
+          />
           {errors.name && <div>Name is required</div>}
+          <br />
           <label>Address</label>
-          <TextField {...register("address", { required: true })} />
-          {errors.address && <span>Address is required</span>}
+          <TextField
+            {...register("address", { required: true, maxLength: 50 })}
+          />
+          {errors.address && errors.address.type === "required" && (
+            <span>Address is required</span>
+          )}
+          {errors.address && errors.address.type === "maxLength" && (
+            <span>Max length exceeded</span>
+          )}
+          <br />
           <label>Phone</label>
-          <TextField {...register("phone", { required: true })} />
+          {/* <InputMask
+            mask="(0)999 999 99 99"
+            value={phone}
+            disabled={false}
+            maskChar=" "
+          >
+            {() => <TextField />}
+          </InputMask> */}
+          <TextField type="tel" {...register("phone", { required: true })} />
           {errors.phone && <div>Phone is required</div>}
+          <br />
           <label>Email</label>
-          <TextField {...register("email", { required: true })} />
+          <TextField type="email" {...register("email", { required: true })} />
           {errors.email && <span>Email is required</span>}
+          <br />
+          {/* <InputLabel id="demo-simple-select-label">Beef</InputLabel> */}
+          {/* <label>We are interested in:</label>
+          <Select
+            id="demo-simple-select"
+            value={beef}
+            label="beef"
+            onChange={handleChange}
+          >
+            <MenuItem value={1}>Quarter beef</MenuItem>
+            <MenuItem value={2}>Half beef</MenuItem>
+            <MenuItem value={4}>Whole beef</MenuItem>
+          </Select> */}
+          <br />
           <Button type="submit" variant="contained" color="primary">
             Submit
           </Button>

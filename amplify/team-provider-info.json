@@ -36,7 +36,7 @@
       "function": {
         "meatpricefunction": {
           "deploymentBucketName": "amplify-theranch-prod-145737-deployment",
-          "s3Key": "amplify-builds/meatpricefunction-4c414643357058566c62-build.zip"
+          "s3Key": "amplify-builds/meatpricefunction-46714934415868393674-build.zip"
         }
       }
     }

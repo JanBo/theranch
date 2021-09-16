@@ -3,21 +3,21 @@
 
 const awsmobile = {
     "aws_project_region": "us-east-1",
-    "aws_appsync_graphqlEndpoint": "https://gi47sup2xfgitdoj7g6xjiglca.appsync-api.us-east-1.amazonaws.com/graphql",
+    "aws_appsync_graphqlEndpoint": "https://5o4t5qkmhvhqddp3dj7yoravxa.appsync-api.us-east-1.amazonaws.com/graphql",
     "aws_appsync_region": "us-east-1",
     "aws_appsync_authenticationType": "API_KEY",
-    "aws_appsync_apiKey": "da2-x65usgc7krb3ngtk6mqqiswri4",
+    "aws_appsync_apiKey": "da2-2iq5s5eyzfehdm2gxzzrgzumre",
     "aws_cloud_logic_custom": [
         {
             "name": "meatpriceapi",
-            "endpoint": "https://ez9ve7jpyc.execute-api.us-east-1.amazonaws.com/staging",
+            "endpoint": "https://gykqnetutd.execute-api.us-east-1.amazonaws.com/prod",
             "region": "us-east-1"
         }
     ],
     "aws_dynamodb_all_tables_region": "us-east-1",
     "aws_dynamodb_table_schemas": [
         {
-            "tableName": "meatpricedb-staging",
+            "tableName": "meatpricedb-prod",
             "region": "us-east-1"
         }
     ]
