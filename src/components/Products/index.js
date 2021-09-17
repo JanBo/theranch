@@ -21,6 +21,9 @@ import {
 
 const Products = ({ heading }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [quarterPrice, setQuarterPrice] = useState(0);
+  const [halfPrice, setHalfPrice] = useState(0);
+  const [wholePrice, setWholePrice] = useState(0);
   const [pris, setPris] = useState();
   const history = useHistory();
 
@@ -35,10 +38,18 @@ const Products = ({ heading }) => {
 
   useEffect(() => {
     //API.get("meatpriceapi", "/meatprice/type").then((prices) =>
-    API.get("meatpriceapi", "/meatprice/type").then((prices) =>
-      //console.log(prices)
-      setPris(prices)
-    );
+    API.get("meatpriceapi", "/meatprice/type")
+      .then((response) => {
+        // Add your code here
+        setPris(response);
+        console.log(response);
+        setQuarterPrice(response[0].price);
+        setHalfPrice(response[1].price);
+        setWholePrice(response[2].price);
+      })
+      .catch((error) => {
+        console.log(error.response);
+      });
     //console.log(price);
     //const models = await DataStore.query(Custome);
     //setCusts(models);
@@ -49,6 +60,12 @@ const Products = ({ heading }) => {
 
   return (
     <ProductsContainer>
+      <div key={quarterPrice.type}>
+        <p>{quarterPrice}</p>
+        <p>{halfPrice}</p>
+        <p>{wholePrice}</p>
+      </div>
+      {/* ))} */}
       <Navbar toggle={toggle} />
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <ProductsHeading>Choose your favorite</ProductsHeading>
@@ -60,8 +77,8 @@ const Products = ({ heading }) => {
               <ProductInfo>
                 <ProductTitle>{product.name}</ProductTitle>
                 <ProductDesc>{product.desc}</ProductDesc>
-                {/* {product.price} */}
-                <ProductPrice></ProductPrice>
+                <ProductPrice>{quarterPrice}</ProductPrice>
+                {/* pris[index].price */}
                 <ProductButton onClick={routeChange}>
                   {product.button}
                 </ProductButton>
