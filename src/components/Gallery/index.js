@@ -4,14 +4,7 @@ import Sidebar from "../Sidebar";
 import {
   GalleryContainer,
   GalleryWrapper,
-  GalleryHeading,
-  //GalleryTitle,
-  //  GalleryCard,
-  //  GalleryImg,
-  //  GalleryInfo,
-  //  GalleryDesc,
-  //  GalleryPrice,
-  //  GalleryButton
+  GalleryHeading
 } from "./GalleryElements";
 
 const Img1 =

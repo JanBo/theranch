@@ -24,7 +24,6 @@ const Products = ({ heading }) => {
   const [quarterPrice, setQuarterPrice] = useState(0);
   const [halfPrice, setHalfPrice] = useState(0);
   const [wholePrice, setWholePrice] = useState(0);
-  const [pris, setPris] = useState();
   const history = useHistory();
 
   const toggle = () => {
@@ -37,35 +36,26 @@ const Products = ({ heading }) => {
   };
 
   useEffect(() => {
-    //API.get("meatpriceapi", "/meatprice/type").then((prices) =>
     API.get("meatpriceapi", "/meatprice/type")
       .then((response) => {
-        // Add your code here
-        setPris(response);
-        console.log(response);
-        setQuarterPrice(response[0].price);
-        setHalfPrice(response[1].price);
-        setWholePrice(response[2].price);
+        for (const item of response) {
+          if (item.type === "QUARTER") setQuarterPrice(item.price);
+          if (item.type === "HALF") setHalfPrice(item.price);
+          if (item.type === "WHOLE") setWholePrice(item.price);
+        }
       })
       .catch((error) => {
         console.log(error.response);
       });
-    //console.log(price);
-    //const models = await DataStore.query(Custome);
-    //setCusts(models);
-
-    //const pris = await DataStore.query(ranchprice);
-    //console.log("Fetching Prices");
   }, []); // only run this function on the first mount
 
   return (
     <ProductsContainer>
-      <div key={quarterPrice.type}>
+      {/* <div>
         <p>{quarterPrice}</p>
         <p>{halfPrice}</p>
         <p>{wholePrice}</p>
-      </div>
-      {/* ))} */}
+      </div> */}
       <Navbar toggle={toggle} />
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <ProductsHeading>Choose your favorite</ProductsHeading>
@@ -77,8 +67,11 @@ const Products = ({ heading }) => {
               <ProductInfo>
                 <ProductTitle>{product.name}</ProductTitle>
                 <ProductDesc>{product.desc}</ProductDesc>
-                <ProductPrice>{quarterPrice}</ProductPrice>
-                {/* pris[index].price */}
+                <ProductPrice>
+                  {index === 0 && quarterPrice}
+                  {index === 1 && halfPrice}
+                  {index === 2 && wholePrice}
+                </ProductPrice>
                 <ProductButton onClick={routeChange}>
                   {product.button}
                 </ProductButton>

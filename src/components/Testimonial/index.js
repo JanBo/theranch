@@ -8,7 +8,7 @@ import Navbar from "../Navbar";
 import Sidebar from "../Sidebar";
 import {
   TestimonialContainer,
-  TestimonialContent
+  TestimonialContent,
 } from "./TestimonialElements";
 
 const useStyles = makeStyles({

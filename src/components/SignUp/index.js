@@ -92,12 +92,14 @@ const SignUp = () => {
           <TextField
             onChange={() => setSaved(false)}
             {...register("name", { required: true, maxLength: 40 })}
+            placeholder="Full name"
           />
           {errors.name && <div>Name is required</div>}
           <br />
           <label>Address</label>
           <TextField
             {...register("address", { required: true, maxLength: 50 })}
+            placeholder="Street Address"
           />
           {errors.address && errors.address.type === "required" && (
             <span>Address is required</span>
@@ -115,11 +117,19 @@ const SignUp = () => {
           >
             {() => <TextField />}
           </InputMask> */}
-          <TextField type="tel" {...register("phone", { required: true })} />
+          <TextField
+            type="tel"
+            {...register("phone", { required: true })}
+            placeholder="Telephone number"
+          />
           {errors.phone && <div>Phone is required</div>}
           <br />
           <label>Email</label>
-          <TextField type="email" {...register("email", { required: true })} />
+          <TextField
+            type="email"
+            {...register("email", { required: true })}
+            placeholder="Email address"
+          />
           {errors.email && <span>Email is required</span>}
           <br />
           {/* <InputLabel id="demo-simple-select-label">Beef</InputLabel> */}

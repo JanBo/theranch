@@ -19,8 +19,8 @@ export const NavLink = styled(Link)`
   cursor: pointer;
 
   @media screen and (max-width: 1000px) {
-    color: #12f;
-    font-size: 1.5rem;
+    color: #fff;
+    font-size: 1.7rem;
     position: absolute;
     top: 10px;
     left: 25px;
