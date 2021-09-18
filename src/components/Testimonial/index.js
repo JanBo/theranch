@@ -68,7 +68,7 @@ const Testimonial = () => {
       <TestimonialContent>
         <OutlinedCard
           title="We have loved the steak we purchased from Bamber Ranch"
-          body="
+          kropp="
             This is our third time buying from them and we will definitely be
             back for more. The ground meat is ideal for making tacos and a lot
             less greasy than what we buy from the store. As an added bonus you
@@ -93,7 +93,10 @@ const Testimonial = () => {
 
         <OutlinedCard
           title="Simply fantastic"
-          kropp="The steaks taste sooo good and the ground meat is lean. As a family we have truly enjoyed the superior quality and convenience as compared with store bought meat."
+          kropp="The steaks taste sooo good and the ground meat is lean. 
+          As a family we have truly enjoyed the superior quality and 
+          convenience as compared with store bought meat. 
+          My biggest request would be that you also sold other types of meat."
           signatur="Samantha"
         />
         <br />
