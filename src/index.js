@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Honeybadger from "@honeybadger-io/js";
-import ErrorBoundary from "@honeybadger-io/react";
+import { ErrorBoundary } from "@honeybadger-io/react";
 
 Honeybadger.configure({
   apiKey: "hbp_tn8W6NrTHdPqDA3V6IOdKIda7d8oi42ejlK7",
