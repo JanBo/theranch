@@ -22,6 +22,8 @@ Honeybadger.configure({
   environment: "production",
 });
 
+Honeybadger.notify("Hello from React");
+
 Amplify.configure(config);
 
 function App() {
