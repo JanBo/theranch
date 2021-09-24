@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Honeybadger from "@honeybadger-io/js";
-import { ErrorBoundary } from "@honeybadger-io/react";
+import { HoneybadgerErrorBoundary } from "@honeybadger-io/react";
 
 Honeybadger.configure({
   apiKey: "hbp_tn8W6NrTHdPqDA3V6IOdKIda7d8oi42ejlK7",
@@ -15,9 +15,9 @@ Honeybadger.notify("Hello from React");
 
 ReactDOM.render(
   <React.StrictMode>
-    <ErrorBoundary honeybadger={Honeybadger}>
+    <HoneybadgerErrorBoundary honeybadger={Honeybadger}>
       <App />
-    </ErrorBoundary>
+    </HoneybadgerErrorBoundary>
   </React.StrictMode>,
   document.getElementById("root")
 );
