@@ -14,44 +14,33 @@ import "./App.css";
 import config from "./aws-exports";
 import Amplify from "aws-amplify";
 
-import Honeybadger from "@honeybadger-io/js";
-import ErrorBoundary from "@honeybadger-io/react";
-
-Honeybadger.configure({
-  apiKey: "hbp_tn8W6NrTHdPqDA3V6IOdKIda7d8oi42ejlK7",
-  environment: "production",
-});
-
-Honeybadger.notify("Hello from React");
-
 Amplify.configure(config);
 
 function App() {
   return (
-    <ErrorBoundary honeybadger={Honeybadger}>
-      <Router>
-        <GlobalStyle />
-        <Switch>
-          <Route path="/" exact component={Hero} />
-          {/* <Route path='/product' component={Products}   /> */}
-          {/* <Route exact path='/products' component={Products} title={`Choose your favorite`} />  */}
-          <Route exact path="/products" component={Products} />
-          {/* render={() => <Products title={`Choose your favorite`} />} /> */}
-          {/*heading="Choose your favorite" data={productData} */}
-          <Route path="/gallery" component={Gallery} />
-          <Route path="/testimonial" component={Testimonial} />
-          <Route path="/aboutus" component={AboutUs} />
-          <Route path="/signup" component={SignUp} />
-        </Switch>
-        {/* <Hero /> */}
-        {/* <Products heading='Choose your favorite' />
+    <Router>
+      <GlobalStyle />
+      <Switch>
+        <Route path="/" exact component={Hero} />
+        {/* <Route path='/product' component={Products}   /> */}
+        {/* <Route exact path='/products' component={Products} title={`Choose your favorite`} />  */}
+        <Route exact path="/products" component={Products} />
+        {/* render={() => <Products title={`Choose your favorite`} />} /> */}
+        {/*heading="Choose your favorite" data={productData} */}
+        <Route path="/gallery" component={Gallery} />
+        <Route path="/testimonial" component={Testimonial} />
+        <Route path="/aboutus" component={AboutUs} />
+        <Route path="/signup" component={SignUp} />
+      </Switch>
+      {/* <Hero /> */}
+      {/* <Products heading='Choose your favorite' />
         <AboutUs heading='About us'/>
         <Gallery heading='Gallery' />  */}
-        {/* <Feature /> */}
+      {/* <Feature /> */}
 
-        <Footer />
+      <Footer />
 
-        {/* <Container maxWidth="sm" className="App">
+      {/* <Container maxWidth="sm" className="App">
       <Paper>
         <Typography variant="h4" component="h1" gutterBottom>
           Create React App + Material-UI
@@ -64,8 +53,7 @@ function App() {
         </Button>
       </Paper>
     </Container>  */}
-      </Router>
-    </ErrorBoundary>
+    </Router>
   );
 }
 export default App;
