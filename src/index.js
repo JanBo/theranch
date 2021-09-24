@@ -11,8 +11,6 @@ Honeybadger.configure({
   environment: "production",
 });
 
-Honeybadger.notify("Hello from React");
-
 ReactDOM.render(
   <React.StrictMode>
     <HoneybadgerErrorBoundary honeybadger={Honeybadger}>
