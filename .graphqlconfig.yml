@@ -1,6 +1,6 @@
 projects:
   theranch:
-    schemaPath: src/graphql/schema.json
+    schemaPath: amplify/backend/api/theranch/build/schema.graphql
     includes:
       - src/graphql/**/*.js
     excludes:

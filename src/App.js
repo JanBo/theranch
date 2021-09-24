@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// import { productData } from "./components/Products/data";
 import { GlobalStyle } from "./globalStyles";
 import Hero from "./components/Hero";
 import Products from "./components/Products";
@@ -9,20 +8,19 @@ import AboutUs from "./components/AboutUs";
 import SignUp from "./components/SignUp";
 import Testimonial from "./components/Testimonial";
 
-// import Feature from './components/Feature';
 import Footer from "./components/Footer";
 
 import "./App.css";
-//import { useEffect, useState } from "react";
-// import Container from '@material-ui/core/Container';
-// import Typography from '@material-ui/core/Typography';
-// import Box from '@material-ui/core/Box';
-// import { Button, Paper } from '@material-ui/core';
-// //import RecipeReviewCard from './components/RecipeReviewCard';
-//import { DataStore } from "@aws-amplify/datastore";
 import config from "./aws-exports";
-//import { Custome } from "./models";
 import Amplify from "aws-amplify";
+
+import Honeybadger from "@honeybadger-io/js";
+import ErrorBoundary from "@honeybadger-io/react";
+
+Honeybadger.configure({
+  apiKey: "hbp_tn8W6NrTHdPqDA3V6IOdKIda7d8oi42ejlK7",
+  environment: "production",
+});
 
 Amplify.configure(config);
 
