@@ -26,29 +26,30 @@ Amplify.configure(config);
 
 function App() {
   return (
-    <Router>
-      <GlobalStyle />
-      <Switch>
-        <Route path="/" exact component={Hero} />
-        {/* <Route path='/product' component={Products}   /> */}
-        {/* <Route exact path='/products' component={Products} title={`Choose your favorite`} />  */}
-        <Route exact path="/products" component={Products} />
-        {/* render={() => <Products title={`Choose your favorite`} />} /> */}
-        {/*heading="Choose your favorite" data={productData} */}
-        <Route path="/gallery" component={Gallery} />
-        <Route path="/testimonial" component={Testimonial} />
-        <Route path="/aboutus" component={AboutUs} />
-        <Route path="/signup" component={SignUp} />
-      </Switch>
-      {/* <Hero /> */}
-      {/* <Products heading='Choose your favorite' />
+    <ErrorBoundary honeybadger={Honeybadger}>
+      <Router>
+        <GlobalStyle />
+        <Switch>
+          <Route path="/" exact component={Hero} />
+          {/* <Route path='/product' component={Products}   /> */}
+          {/* <Route exact path='/products' component={Products} title={`Choose your favorite`} />  */}
+          <Route exact path="/products" component={Products} />
+          {/* render={() => <Products title={`Choose your favorite`} />} /> */}
+          {/*heading="Choose your favorite" data={productData} */}
+          <Route path="/gallery" component={Gallery} />
+          <Route path="/testimonial" component={Testimonial} />
+          <Route path="/aboutus" component={AboutUs} />
+          <Route path="/signup" component={SignUp} />
+        </Switch>
+        {/* <Hero /> */}
+        {/* <Products heading='Choose your favorite' />
         <AboutUs heading='About us'/>
         <Gallery heading='Gallery' />  */}
-      {/* <Feature /> */}
+        {/* <Feature /> */}
 
-      <Footer />
+        <Footer />
 
-      {/* <Container maxWidth="sm" className="App">
+        {/* <Container maxWidth="sm" className="App">
       <Paper>
         <Typography variant="h4" component="h1" gutterBottom>
           Create React App + Material-UI
@@ -61,7 +62,8 @@ function App() {
         </Button>
       </Paper>
     </Container>  */}
-    </Router>
+      </Router>
+    </ErrorBoundary>
   );
 }
 export default App;
