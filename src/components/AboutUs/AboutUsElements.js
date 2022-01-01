@@ -1,12 +1,13 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const AboutUsContainer = styled.div`
   /* width: 100vw; */
   min-height: 100vh;
   padding: 5rem calc((100vw - 1300px) / 2);
-  background: #150f0f;
+  background: #25000f;
   color: #fff;
 `;
+/* #150f0f; */
 
 export const AboutUsWrapper = styled.div`
   display: flex;
@@ -73,12 +74,10 @@ export const AboutUsButton = styled.button`
   }
 `;
 
-
 export const AboutUsP = styled.p`
   font-size: clamp(2rem, 2.5vw, 3rem);
   margin-bottom: 2rem;
 `;
-
 
 export const AboutUsContent = styled.div`
   height: calc(100vh - 80px);

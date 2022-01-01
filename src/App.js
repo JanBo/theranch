@@ -37,7 +37,6 @@ function App() {
         <AboutUs heading='About us'/>
         <Gallery heading='Gallery' />  */}
       {/* <Feature /> */}
-
       <Footer />
 
       {/* <Container maxWidth="sm" className="App">

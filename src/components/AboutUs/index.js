@@ -32,7 +32,6 @@ const AboutUs = () => {
         sister. He often took solo trips on horseback and train to transport
         cattle to sale.
         <br />
-        <br />
         Bob was drafted into World War II and went to serve his country. Before
         leaving he married Juanita Mae Bickford who grew up on a neighboring
         homestead. When Bob returned he and Juanita began buying their own land
