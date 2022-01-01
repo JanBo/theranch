@@ -24,13 +24,13 @@ const AboutUs = () => {
       <Navbar toggle={toggle} />
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <AboutUsContent>
-        Welcome to Bamber Ranch! We are so pleased we are able to share with you
-        a treasure our family has enjoyed for decades. Bamber Ranch is a labor
-        of love from 4 generations of Colorado cattlemen. Robert D. Bamber (Bob)
-        grew up on his father and mothers Vetile and Nellie’s ranch outside of
-        Pritchett CO. Bob loved helping his parents and working with his
-        brothers and sisters. He often took solo trips on horseback and train to
-        transport cattle to sale.
+        Welcome to Bamber Ranch! We are so pleased to share with you a treasure
+        our family has enjoyed for decades. Bamber Ranch is a labor of love from
+        4 generations of Colorado cattlemen. Robert D. Bamber (Bob) grew up on
+        his father and mother's (Vitale and Nellie) ranch outside of Pritchett
+        CO. Bob loved helping his parents and working with his brothers and
+        sister. He often took solo trips on horseback and train to transport
+        cattle to sale.
         <br />
         <br />
         Bob was drafted into World War II and went to serve his country. Before
@@ -52,21 +52,19 @@ const AboutUs = () => {
         was not an uncommon occurrence in the Bamber home for the children to
         awake a spring morning to find a brand new baby calf (or two!) in their
         kitchen, too young to be able withstand the cold temperatures and
-        blowing winds. Warmed with towels and often the girls’ hair dries the
+        blowing winds. Warmed with towels and often the girls’ hair dryers the
         baby calves would be tenderly (and excitedly) nursed back to health. The
-        new calf, often turned pet, would be bottle fed and when healthy enough
+        new calf, often turned pet, would be bottle-fed and when healthy enough
         returned to the pasture. Jack with his soft heart keeping the animal on
         the ranch for years to come as they often were named and would still
         respond to the family who cared for them.
         <br />
-        <br />
         On the ranch today, there is a dog named Rooster and we have about 10
-        quarter horses who, like our cattle, roams around freely on our Ranch.
+        quarter horses who, like our cattle, roam around freely on our Ranch.
         Bamber Ranch is not simply about beef production, Bamber Ranch is a
         labor of love. Family owned and operated. Cattle cared for and driven by
         Jack, his children and now grandchildren. We are so excited to share our
         Colorado ranch raised beef with you!
-        <br />
         <br />
       </AboutUsContent>
 
