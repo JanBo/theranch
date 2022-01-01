@@ -4,7 +4,7 @@ import { FaHatCowboy } from "react-icons/fa";
 
 export const Nav = styled.nav`
   background: transparent;
-  height: 40px;
+  height: 60px;
   display: flex;
   justify-content: center;
   font-weight: 700;

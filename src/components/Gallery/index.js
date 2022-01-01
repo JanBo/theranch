@@ -4,39 +4,37 @@ import Sidebar from "../Sidebar";
 import {
   GalleryContainer,
   GalleryWrapper,
-  GalleryHeading
+  GalleryHeading,
 } from "./GalleryElements";
 
 const Img1 =
-  "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_1740.jpeg";
+  "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_1740.jpeg"; // stay
 const Img2 =
-  "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_1742.jpeg";
+  "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_1742.jpeg"; // stay
 const Img3 =
-  "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_1765.jpeg";
+  "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_9231.jpeg"; // changed
 const Img4 =
-  "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_1766.jpeg";
+  "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_1766.jpeg"; // stay
 const Img5 =
-  "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_2468.jpeg";
+  "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_9236.jpeg"; // changed
 const Img6 =
-  "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_2487.jpeg";
+  "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_9242.jpeg"; // changed
 const Img7 =
-  "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_2498.jpeg";
+  "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_9244.jpeg"; // changed
 const Img8 =
-  "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_2516.jpeg";
+  "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_9267.jpeg"; // changed
 const Img9 =
-  "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_3433.jpeg";
+  "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_3433.jpeg"; // stay
 const Img10 =
-  "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_6282.jpeg";
+  "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_9277.jpeg"; // changed
 const Img11 =
-  "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_2539.jpeg";
+  "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_2539.jpeg"; // stay
 const Img12 =
-  "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_3439.jpeg";
+  "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_3439.jpeg"; // stay
 const Img13 =
-  "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_3451.jpeg";
+  "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_2000.png"; // changed
 const Img14 =
-  "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_3453.jpeg";
-const Img15 =
-  "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_4884.jpeg";
+  "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_4884.jpeg"; // stay
 
 const Gallery = ({ heading, data }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -68,7 +66,7 @@ const Gallery = ({ heading, data }) => {
         <img className="GalleryImg" src={Img12} alt="The Ranch 12"></img>
         <img className="GalleryImg" src={Img13} alt="The Ranch 13"></img>
         <img className="GalleryImg" src={Img14} alt="The Ranch 14"></img>
-        <img className="GalleryImg" src={Img15} alt="The Ranch 15"></img>
+        {/*<img className="GalleryImg" src={Img15} alt="The Ranch 15"></img>*/}
         {/* <GalleryCard key={index}>
               <GalleryImg src={Gallery.img} alt={Gallery.alt} />
               <GalleryInfo>
