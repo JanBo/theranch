@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "paths": {
+    "/meatprice": {
+      "permissions": {
+        "setting": "open"
+      },
+      "lambdaFunction": "meatpricefunction"
+    }
+  }
+}
