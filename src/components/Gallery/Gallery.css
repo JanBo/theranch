@@ -1,0 +1,57 @@
+.slider {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gallery-container {
+    /* width: 100vw; */
+    min-height: 100vh;
+    padding: 5rem calc((100vw - 1300px) / 2);
+    background: #150f0f;
+    color: #fff;
+}
+
+/*export const GalleryContainer = styled.div`*/
+
+/*`;*/
+
+.image {
+    max-width: 1600px;
+    height: 700px;
+    border-radius: 10px;
+}
+
+.right-arrow {
+    position: absolute;
+    top: 50%;
+    right: 32px;
+    font-size: 3rem;
+    color: #ffffff;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+}
+
+.left-arrow {
+    position: absolute;
+    top: 50%;
+    left: 32px;
+    font-size: 3rem;
+    color: #ffffff;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+}
+
+.slide {
+    opacity: 0;
+    transition-duration: 1s ease;
+}
+
+.slide.active {
+    opacity: 1;
+    transition-duration: 1s;
+    transform: scale(1.08);
+}

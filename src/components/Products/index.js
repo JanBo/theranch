@@ -48,19 +48,14 @@ const Products = ({ heading }) => {
         console.log(error.response);
       });
   }, []); // only run this function on the first mount
-
+  
   return (
     <ProductsContainer>
-      {/* <div>
-        <p>{quarterPrice}</p>
-        <p>{halfPrice}</p>
-        <p>{wholePrice}</p>
-      </div> */}
       <Navbar toggle={toggle} />
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <ProductsHeading>Choose your favorite</ProductsHeading>
       <ProductWrapper>
-        {productData.map((product, index) => {
+        {productData && productData.map((product, index) => {
           return (
             <ProductCard key={index}>
               <ProductImg src={product.img} alt={product.alt} />
@@ -68,9 +63,9 @@ const Products = ({ heading }) => {
                 <ProductTitle>{product.name}</ProductTitle>
                 <ProductDesc>{product.desc}</ProductDesc>
                 <ProductPrice>
-                  {index === 0 && quarterPrice}
-                  {index === 1 && halfPrice}
-                  {index === 2 && wholePrice}
+                  {index === 0 && quarterPrice > 0 && quarterPrice}
+                  {index === 1 && halfPrice > 0 && halfPrice}
+                  {index === 2 && wholePrice > 0 && wholePrice}
                 </ProductPrice>
                 <ProductButton onClick={routeChange}>
                   {product.button}

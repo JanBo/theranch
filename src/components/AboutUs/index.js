@@ -31,7 +31,6 @@ const AboutUs = () => {
         CO. Bob loved helping his parents and working with his brothers and
         sister. He often took solo trips on horseback and train to transport
         cattle to sale.
-        <br />
         Bob was drafted into World War II and went to serve his country. Before
         leaving he married Juanita Mae Bickford who grew up on a neighboring
         homestead. When Bob returned he and Juanita began buying their own land
@@ -57,6 +56,7 @@ const AboutUs = () => {
         returned to the pasture. Jack with his soft heart keeping the animal on
         the ranch for years to come as they often were named and would still
         respond to the family who cared for them.
+        <br />
         <br />
         On the ranch today, there is a dog named Rooster and we have about 10
         quarter horses who, like our cattle, roam around freely on our Ranch.
