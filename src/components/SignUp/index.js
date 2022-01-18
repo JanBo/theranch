@@ -34,6 +34,9 @@ import {
   // SignUpBtn,
   StyleWrap,
 } from "./SignUpElements";
+import {makeStyles} from "@material-ui/core/styles";
+import ImgBg from "../../images/cattle6.jpg";
+import Typography from "@material-ui/core/Typography";
 
 // type FormData = {
 //   name: string,
@@ -42,9 +45,49 @@ import {
 //   email: string,
 // };
 
+const useStyles = makeStyles({
+  container: {
+    background: "#383434",
+    url: "(${ImgBg})",
+    height: "100vh",
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+  },
+  h1: {
+    color: "#ffffff",
+    fontWeight: 600,
+    padding: "10px",
+    textAlign: "center",
+    marginBottom: 20,
+  },
+  form: {
+    background: "white",
+    border: "1px solid #dedede",
+    borderRadius: "10px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-around",
+    margin: "0 auto",
+    maxWidth: "500px",
+    padding: "30px 50px",
+  },
+  error: {
+    color: "red",
+    fontFamily: "sans-serif",
+    fontSize: "12px",
+    height: "30px",
+  },
+  submitButton: {
+    backgroundColor: "#6976d9",
+    color: "white",
+    fontFamily: "sans-serif",
+    fontSize: "14px",
+  },
+});
+
 const SignUp = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const classes = useStyles();
   const toggle = () => {
     setIsOpen(!isOpen);
   };
@@ -85,8 +128,8 @@ const SignUp = () => {
     return (
       // {saved && (
       <>
-        <h1>New Customer</h1>
-        <form onSubmit={handleSubmit((data) => createCustomer(data))}>
+        <Typography variant="h5" className={classes.h1}>New Customer</Typography>
+        <form className={classes.form} onSubmit={handleSubmit((data) => createCustomer(data))}>
           {/* <form onSubmit={handleSubmit((data) => createCustomer(data))}> */}
           <label>Full name</label>
           <TextField
@@ -94,7 +137,7 @@ const SignUp = () => {
             {...register("name", { required: true, maxLength: 40 })}
             placeholder="Full name"
           />
-          {errors.name && <div>Name is required</div>}
+          {errors.name && <div className={classes.error}>Name is required</div>}
           <br />
           <label>Address</label>
           <TextField
@@ -102,10 +145,10 @@ const SignUp = () => {
             placeholder="Street Address"
           />
           {errors.address && errors.address.type === "required" && (
-            <span>Address is required</span>
+            <span className={classes.error}>Address is required</span>
           )}
           {errors.address && errors.address.type === "maxLength" && (
-            <span>Max length exceeded</span>
+            <span className={classes.error}>Max length exceeded</span>
           )}
           <br />
           <label>Phone</label>
@@ -122,7 +165,7 @@ const SignUp = () => {
             {...register("phone", { required: true })}
             placeholder="Telephone number"
           />
-          {errors.phone && <div>Phone is required</div>}
+          {errors.phone && <div className={classes.error}>Phone is required</div>}
           <br />
           <label>Email</label>
           <TextField
@@ -130,7 +173,7 @@ const SignUp = () => {
             {...register("email", { required: true })}
             placeholder="Email address"
           />
-          {errors.email && <span>Email is required</span>}
+          {errors.email && <span className={classes.error}>Email is required</span>}
           <br />
           {/* <InputLabel id="demo-simple-select-label">Beef</InputLabel> */}
           {/* <label>We are interested in:</label>
@@ -145,7 +188,7 @@ const SignUp = () => {
             <MenuItem value={4}>Whole beef</MenuItem>
           </Select> */}
           <br />
-          <Button type="submit" variant="contained" color="primary">
+          <Button className={classes.submitButton} type="submit" variant="contained" color="primary">
             Submit
           </Button>
         </form>
@@ -167,15 +210,15 @@ const SignUp = () => {
   }
 
   return (
-    <SignUpContainer>
+    <div className={classes.container}>
       <Navbar toggle={toggle} />
       <Sidebar isOpen={isOpen} toggle={toggle} />
-      <SignUpContent>
-        <StyleWrap>
+      {/*<SignUpContent>*/}
+      {/*  <StyleWrap>*/}
           <Form />
-        </StyleWrap>
-      </SignUpContent>
-    </SignUpContainer>
+        {/*</StyleWrap>*/}
+      {/*</SignUpContent>*/}
+    </div>
   );
 };
 

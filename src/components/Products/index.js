@@ -48,7 +48,7 @@ const Products = ({ heading }) => {
         console.log(error.response);
       });
   }, []); // only run this function on the first mount
-  
+
   return (
     <ProductsContainer>
       <Navbar toggle={toggle} />
@@ -63,9 +63,9 @@ const Products = ({ heading }) => {
                 <ProductTitle>{product.name}</ProductTitle>
                 <ProductDesc>{product.desc}</ProductDesc>
                 <ProductPrice>
-                  {index === 0 && quarterPrice > 0 && quarterPrice}
-                  {index === 1 && halfPrice > 0 && halfPrice}
-                  {index === 2 && wholePrice > 0 && wholePrice}
+                  {index === 0 && quarterPrice > 0 && `$${quarterPrice}`}
+                  {index === 1 && halfPrice > 0 && `$${halfPrice}`}
+                  {index === 2 && wholePrice > 0 && `$${wholePrice}`}
                 </ProductPrice>
                 <ProductButton onClick={routeChange}>
                   {product.button}

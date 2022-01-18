@@ -6,14 +6,11 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import Navbar from "../Navbar";
 import Sidebar from "../Sidebar";
-import {
-  TestimonialContainer,
-  TestimonialContent,
-} from "./TestimonialElements";
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 275,
+    minWidth: 300,
+    borderRadius: '10px',
   },
   bullet: {
     display: "inline-block",
@@ -21,51 +18,58 @@ const useStyles = makeStyles({
     transform: "scale(0.8)",
   },
   title: {
-    fontSize: 14,
+    fontWeight: 600
   },
   pos: {
     marginBottom: 12,
   },
+  container: {
+    minHeight: "100vh",
+    padding: "5rem calc((100vw - 1300px) / 2)",
+    background: "#383434",
+    color: "#fff",
+  },
+  content: {
+    marginTop: 50,
+    height: "calc(100vh - 80px)",
+    maxHeight: "100%",
+    padding: "0rem calc((100vw - 1300px) / 2)",
+  }
 });
 
 const Testimonial = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const classes = useStyles();
   const toggle = () => {
     setIsOpen(!isOpen);
   };
 
   function OutlinedCard({ title, kropp, signatur }) {
-    const classes = useStyles();
+
     //const bull = <span className={classes.bullet}>•</span>;
 
     return (
       <Card className={classes.root} raised="true" variant="outlined">
         <CardContent>
-          <Typography
-            className={classes.title}
-            color="textSecondary"
-            gutterBottom
-          >
-            <h1>{title}</h1>
+          <Typography className={classes.title} variant="h6">{title}</Typography>
             <br />
-            {kropp}
+
+          <Typography variant="body1">{kropp}</Typography>
             <br />
             <br />
+          <Typography variant="body1">{signatur}</Typography>
             <br />
-            {signatur}
-            <br />
-          </Typography>
+
         </CardContent>
       </Card>
     );
   }
 
   return (
-    <TestimonialContainer>
+    <div className={classes.container}>
       <Navbar toggle={toggle} />
       <Sidebar isOpen={isOpen} toggle={toggle} />
-      <TestimonialContent>
+      <div className={classes.content}>
         <OutlinedCard
           title="We have loved the steak we purchased from Bamber Ranch"
           kropp="
@@ -104,8 +108,8 @@ const Testimonial = () => {
         {/* <Card raised="true" variant="outlined">
           Test
         </Card> */}
-      </TestimonialContent>
-    </TestimonialContainer>
+      </div>
+    </div>
   );
 };
 
