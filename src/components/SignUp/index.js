@@ -87,6 +87,11 @@ const useStyles = makeStyles({
     fontFamily: "sans-serif",
     fontSize: "14px",
   },
+  registered: {
+    marginTop: 40,
+    color: "white",
+  }
+
 });
 
 const SignUp = () => {
@@ -204,7 +209,7 @@ const SignUp = () => {
               alignItems: "center",
             }}
           >
-            <h1>
+            <h1 className={classes.registered}>
               Thank you for registering, we will contact you within 24 hours!
             </h1>
           </div>
