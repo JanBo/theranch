@@ -18,12 +18,14 @@
 /*`;*/
 
 .image {
+    filter: drop-shadow(0 0 0.7rem rgba(0, 0, 0, 0.4));
     max-width: 1600px;
     height: 700px;
     border-radius: 10px;
 }
 
 .right-arrow {
+    filter: drop-shadow(0 0 0.4rem rgba(0, 0, 0, 0.4));
     position: absolute;
     top: 50%;
     right: 32px;
@@ -35,6 +37,7 @@
 }
 
 .left-arrow {
+    filter: drop-shadow(0 0 0.4rem rgba(0, 0, 0, 0.4));
     position: absolute;
     top: 50%;
     left: 32px;

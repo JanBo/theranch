@@ -68,6 +68,7 @@ export const SideBtnWrap = styled.div`
 `;
 
 export const SidebarRoute = styled(Link)`
+  filter: drop-shadow(0.2rem 0.2rem 0.3rem rgba(0, 0, 0, 0.3));
   background: #e31837;
   white-space: nowrap;
   padding: 16px 64px;

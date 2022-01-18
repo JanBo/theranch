@@ -11,6 +11,7 @@ const useStyles = makeStyles({
   root: {
     minWidth: 300,
     borderRadius: '10px',
+    filter: "drop-shadow(0.45rem 0.45rem 0.4rem rgba(0, 0, 0, 0.4))",
   },
   bullet: {
     display: "inline-block",

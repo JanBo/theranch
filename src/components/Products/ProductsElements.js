@@ -22,6 +22,7 @@ export const ProductCard = styled.div`
 `;
 
 export const ProductImg = styled.img`
+  filter: drop-shadow(0.2rem 0.2rem 0.3rem rgba(0, 0, 0, 0.3));
   height: 300px;
   min-width: 300px;
   max-width: 100%;
@@ -58,6 +59,7 @@ export const ProductPrice = styled.p`
 `;
 
 export const ProductButton = styled.button`
+  filter: drop-shadow(0.2rem 0.2rem 0.3rem rgba(0, 0, 0, 0.3));
   font-size: 1rem;
   padding: 1rem 4rem;
   border: none;

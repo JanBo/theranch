@@ -47,6 +47,7 @@ export const HeroP = styled.p`
 `;
 
 export const HeroBtn = styled.button`
+  filter: drop-shadow(0.45rem 0.45rem 0.4rem rgba(0, 0, 0, 0.4));
   font-size: 1.4rem;
   padding: 1rem 4rem;
   border: none;

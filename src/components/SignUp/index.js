@@ -61,6 +61,7 @@ const useStyles = makeStyles({
     marginBottom: 20,
   },
   form: {
+    filter: "drop-shadow(0.45rem 0.45rem 0.4rem rgba(0, 0, 0, 0.4))",
     background: "white",
     border: "1px solid #dedede",
     borderRadius: "10px",
@@ -78,8 +79,11 @@ const useStyles = makeStyles({
     height: "30px",
   },
   submitButton: {
-    backgroundColor: "#6976d9",
-    color: "white",
+    filter: "drop-shadow(0.2rem 0.2rem 0.3rem rgba(0, 0, 0, 0.3))",
+    background: "#e31837",
+    color: "#fff",
+    // backgroundColor: "#6976d9",
+    // color: "white",
     fontFamily: "sans-serif",
     fontSize: "14px",
   },
@@ -131,7 +135,7 @@ const SignUp = () => {
         <Typography variant="h5" className={classes.h1}>New Customer</Typography>
         <form className={classes.form} onSubmit={handleSubmit((data) => createCustomer(data))}>
           {/* <form onSubmit={handleSubmit((data) => createCustomer(data))}> */}
-          <label>Full name</label>
+          <label>Name</label>
           <TextField
             onChange={() => setSaved(false)}
             {...register("name", { required: true, maxLength: 40 })}
@@ -188,7 +192,7 @@ const SignUp = () => {
             <MenuItem value={4}>Whole beef</MenuItem>
           </Select> */}
           <br />
-          <Button className={classes.submitButton} type="submit" variant="contained" color="primary">
+          <Button className={classes.submitButton} type="submit" >
             Submit
           </Button>
         </form>

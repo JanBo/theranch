@@ -11,6 +11,7 @@ export const Nav = styled.nav`
 `;
 
 export const NavLink = styled(Link)`
+  filter: drop-shadow(0.2rem 0.2rem 0.3rem rgba(0, 0, 0, 0.3));
   color: #fff;
   font-size: 2rem;
   display: flex;
@@ -28,6 +29,7 @@ export const NavLink = styled(Link)`
 `;
 
 export const NavIcon = styled.div`
+  filter: drop-shadow(0.2rem 0.2rem 0.3rem rgba(0, 0, 0, 0.3));
   display: block;
   position: absolute;
   top: 0;
