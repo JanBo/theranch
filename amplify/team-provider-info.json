@@ -38,9 +38,6 @@
           "deploymentBucketName": "amplify-theranch-prod-145737-deployment",
           "s3Key": "amplify-builds/meatpricefunction-46714934415868393674-build.zip"
         }
-      },
-      "auth": {
-        "theranch897f53f1": {}
       }
     }
   }

@@ -1,4 +1,15 @@
 export type AmplifyDependentResourcesAttributes = {
+    "api": {
+        "theranch": {
+            "GraphQLAPIIdOutput": "string",
+            "GraphQLAPIEndpointOutput": "string"
+        },
+        "meatpriceapi": {
+            "RootUrl": "string",
+            "ApiName": "string",
+            "ApiId": "string"
+        }
+    },
     "function": {
         "meatpricefunction": {
             "Name": "string",
