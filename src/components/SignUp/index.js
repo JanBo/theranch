@@ -58,7 +58,12 @@ const useStyles = makeStyles({
     fontWeight: 600,
     padding: "10px",
     textAlign: "center",
-    marginBottom: 20,
+  },
+  choice: {
+    color: "#e31837",
+    fontWeight: 600,
+    padding: "10px",
+    textAlign: "center",
   },
   form: {
     filter: "drop-shadow(0.45rem 0.45rem 0.4rem rgba(0, 0, 0, 0.4))",
@@ -71,6 +76,7 @@ const useStyles = makeStyles({
     margin: "0 auto",
     maxWidth: "500px",
     padding: "30px 50px",
+    marginTop: 20,
   },
   error: {
     color: "red",
@@ -94,13 +100,12 @@ const useStyles = makeStyles({
 
 });
 
-const SignUp = () => {
+const SignUp = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const classes = useStyles();
   const toggle = () => {
     setIsOpen(!isOpen);
   };
-
   //const [custs, setCusts] = useState([]);
   const [saved, setSaved] = useState(false);
   // const [beef, setBeef] = useState("");
@@ -127,6 +132,21 @@ const SignUp = () => {
     console.log(newCust);
   };
 
+
+
+  const selectionChoice = () => {
+    let index = props.location.state?.selection;
+    let choice = ""
+    if (index == 0) {
+      choice = "1/4 Beef"
+    } else if (index == 1) {
+      choice = "1/2 Beef"
+    } else if (index == 2) {
+      choice = "1 Beef"
+    }
+    return choice;
+  }
+  let choice = selectionChoice();
   function Form() {
     const {
       register,
@@ -138,6 +158,7 @@ const SignUp = () => {
       // {saved && (
       <>
         <Typography variant="h5" className={classes.h1}>New Customer</Typography>
+        {choice && <Typography variant="h5" className={classes.choice}>Currently Selected: {choice}</Typography>}
         <form className={classes.form} onSubmit={handleSubmit((data) => createCustomer(data))}>
           {/* <form onSubmit={handleSubmit((data) => createCustomer(data))}> */}
           <label>Name</label>

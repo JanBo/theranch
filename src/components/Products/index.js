@@ -83,6 +83,7 @@ const useStyles = makeStyles({
 const Products = ({ heading }) => {
   const [isOpen, setIsOpen] = useState(false);
   const classes = useStyles();
+  const [selection, setSelection] = useState("");
   const [quarterPrice, setQuarterPrice] = useState(0);
   const [halfPrice, setHalfPrice] = useState(0);
   const [wholePrice, setWholePrice] = useState(0);
@@ -92,9 +93,12 @@ const Products = ({ heading }) => {
     setIsOpen(!isOpen);
   };
 
-  const routeChange = () => {
+  const routeChange = (ind) => {
     let path = `/signup`;
-    history.push(path);
+    history.push({
+      pathname: path,
+      state: {selection: ind}
+    })
   };
 
   useEffect(() => {
@@ -129,7 +133,7 @@ const Products = ({ heading }) => {
                   {index === 1 && halfPrice > 0 && `$${halfPrice}`}
                   {index === 2 && wholePrice > 0 && `$${wholePrice}`}
                 </div>
-                <div className={classes.button} onClick={routeChange}>
+                <div className={classes.button} onClick={()=>routeChange(index)}>
                   {product.button}
                 </div>
               </div>
