@@ -20,29 +20,6 @@ const awsmobile = {
             "tableName": "meatpricedb-prod",
             "region": "us-east-1"
         }
-    ],
-    "aws_cognito_identity_pool_id": "us-east-1:76ca704c-a72c-414a-9ccd-d653ef7f9f17",
-    "aws_cognito_region": "us-east-1",
-    "aws_user_pools_id": "us-east-1_6yrNbvsyT",
-    "aws_user_pools_web_client_id": "3a2afl3fqjj4sa945eelloer87",
-    "oauth": {},
-    "aws_cognito_username_attributes": [
-        "EMAIL"
-    ],
-    "aws_cognito_social_providers": [],
-    "aws_cognito_signup_attributes": [
-        "EMAIL"
-    ],
-    "aws_cognito_mfa_configuration": "OFF",
-    "aws_cognito_mfa_types": [
-        "SMS"
-    ],
-    "aws_cognito_password_protection_settings": {
-        "passwordPolicyMinLength": 8,
-        "passwordPolicyCharacters": []
-    },
-    "aws_cognito_verification_mechanisms": [
-        "EMAIL"
     ]
 };
 
