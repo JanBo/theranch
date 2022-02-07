@@ -1,0 +1,12 @@
+{
+  "resourceName": "ranchorders",
+  "tableName": "ranchorders",
+  "partitionKey": {
+    "fieldName": "email",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": [
+    "ranchordersTrigger477dd50f"
+  ]
+}
