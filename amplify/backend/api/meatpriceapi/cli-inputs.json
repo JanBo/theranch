@@ -6,6 +6,13 @@
         "setting": "open"
       },
       "lambdaFunction": "meatpricefunction"
+    },
+    "/customerorder": {
+      "name": "/customerorder",
+      "lambdaFunction": "customerorderlambda",
+      "permissions": {
+        "setting": "open"
+      }
     }
   }
 }

@@ -1,9 +1,5 @@
 export type AmplifyDependentResourcesAttributes = {
     "api": {
-        "theranch": {
-            "GraphQLAPIIdOutput": "string",
-            "GraphQLAPIEndpointOutput": "string"
-        },
         "meatpriceapi": {
             "RootUrl": "string",
             "ApiName": "string",
@@ -12,6 +8,12 @@ export type AmplifyDependentResourcesAttributes = {
     },
     "function": {
         "meatpricefunction": {
+            "Name": "string",
+            "Arn": "string",
+            "Region": "string",
+            "LambdaExecutionRole": "string"
+        },
+        "customerorderlambda": {
             "Name": "string",
             "Arn": "string",
             "Region": "string",
@@ -28,6 +30,26 @@ export type AmplifyDependentResourcesAttributes = {
             "SortKeyName": "string",
             "SortKeyType": "string",
             "Region": "string"
+        },
+        "customerorderdb": {
+            "Name": "string",
+            "Arn": "string",
+            "StreamArn": "string",
+            "PartitionKeyName": "string",
+            "PartitionKeyType": "string",
+            "Region": "string"
+        }
+    },
+    "hosting": {
+        "S3AndCloudFront": {
+            "Region": "string",
+            "HostingBucketName": "string",
+            "WebsiteURL": "string",
+            "S3BucketSecureURL": "string",
+            "CloudFrontDistributionID": "string",
+            "CloudFrontDomainName": "string",
+            "CloudFrontSecureURL": "string",
+            "CloudFrontOriginAccessIdentity": "string"
         }
     }
 }

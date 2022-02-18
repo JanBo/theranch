@@ -37,6 +37,18 @@
         "meatpricefunction": {
           "deploymentBucketName": "amplify-theranch-prod-145737-deployment",
           "s3Key": "amplify-builds/meatpricefunction-46714934415868393674-build.zip"
+        },
+        "ranchordersTrigger477dd50f": {
+          "deploymentBucketName": "amplify-theranch-prod-145737-deployment",
+          "s3Key": "amplify-builds/ranchordersTrigger477dd50f-344e43383642766d6c4b-build.zip"
+        },
+        "ranchorder": {
+          "deploymentBucketName": "amplify-theranch-prod-145737-deployment",
+          "s3Key": "amplify-builds/ranchorder-4635326551596f4a3138-build.zip"
+        },
+        "customerorderlambda": {
+          "deploymentBucketName": "amplify-theranch-prod-145737-deployment",
+          "s3Key": "amplify-builds/customerorderlambda-56554b594d73744e4233-build.zip"
         }
       }
     }

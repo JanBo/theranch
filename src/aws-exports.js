@@ -3,10 +3,6 @@
 
 const awsmobile = {
     "aws_project_region": "us-east-1",
-    "aws_appsync_graphqlEndpoint": "https://5o4t5qkmhvhqddp3dj7yoravxa.appsync-api.us-east-1.amazonaws.com/graphql",
-    "aws_appsync_region": "us-east-1",
-    "aws_appsync_authenticationType": "API_KEY",
-    "aws_appsync_apiKey": "da2-2iq5s5eyzfehdm2gxzzrgzumre",
     "aws_cloud_logic_custom": [
         {
             "name": "meatpriceapi",
@@ -19,8 +15,15 @@ const awsmobile = {
         {
             "tableName": "meatpricedb-prod",
             "region": "us-east-1"
+        },
+        {
+            "tableName": "customerorderdb-prod",
+            "region": "us-east-1"
         }
-    ]
+    ],
+    "aws_content_delivery_bucket": "theranch-20220207171542-hostingbucket-prod",
+    "aws_content_delivery_bucket_region": "us-east-1",
+    "aws_content_delivery_url": "https://d34mep5zcaxfxz.cloudfront.net"
 };
 
 

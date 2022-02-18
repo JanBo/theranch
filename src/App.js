@@ -8,8 +8,6 @@ import AboutUs from "./components/AboutUs";
 import SignUp from "./components/SignUp";
 import Testimonial from "./components/Testimonial";
 
-import Footer from "./components/Footer";
-
 import "./App.css";
 import config from "./aws-exports";
 import Amplify from "aws-amplify";
@@ -37,7 +35,6 @@ function App() {
         <AboutUs heading='About us'/>
         <Gallery heading='Gallery' />  */}
       {/* <Feature /> */}
-      <Footer />
 
       {/* <Container maxWidth="sm" className="App">
       <Paper>

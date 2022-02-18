@@ -5,6 +5,7 @@ import Sidebar from "../Sidebar";
 import { productData } from "./data";
 import { API } from "aws-amplify";
 import {makeStyles} from "@material-ui/core/styles";
+import Footer from "../../components/Footer";
 
 const useStyles = makeStyles({
   container: {
@@ -121,26 +122,35 @@ const Products = ({ heading }) => {
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <div className={classes.heading}>Choose your favorite</div>
       <div className={classes.wrapper}>
-        {productData && productData.map((product, index) => {
-          return (
-            <div className={classes.card} key={index}>
-              <img className={classes.img} src={product.img} alt={product.alt}/>
-              <div className={classes.productInfo}>
-                <div className={classes.title}>{product.name}</div>
-                <div className={classes.desc}>{product.desc}</div>
-                <div className={classes.price}>
-                  {index === 0 && quarterPrice > 0 && `$${quarterPrice}`}
-                  {index === 1 && halfPrice > 0 && `$${halfPrice}`}
-                  {index === 2 && wholePrice > 0 && `$${wholePrice}`}
-                </div>
-                <div className={classes.button} onClick={()=>routeChange(index)}>
-                  {product.button}
+        {productData &&
+          productData.map((product, index) => {
+            return (
+              <div className={classes.card} key={index}>
+                <img
+                  className={classes.img}
+                  src={product.img}
+                  alt={product.alt}
+                />
+                <div className={classes.productInfo}>
+                  <div className={classes.title}>{product.name}</div>
+                  <div className={classes.desc}>{product.desc}</div>
+                  <div className={classes.price}>
+                    {index === 0 && quarterPrice > 0 && `$${quarterPrice}`}
+                    {index === 1 && halfPrice > 0 && `$${halfPrice}`}
+                    {index === 2 && wholePrice > 0 && `$${wholePrice}`}
+                  </div>
+                  <div
+                    className={classes.button}
+                    onClick={() => routeChange(index)}
+                  >
+                    {product.button}
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
       </div>
+      <Footer />
     </div>
   );
 };

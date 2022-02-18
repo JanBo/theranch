@@ -18,7 +18,7 @@ import {
   // MenuItem,
 } from "@material-ui/core";
 import { DataStore } from "@aws-amplify/datastore";
-import { Custome } from "./../../models";
+//import { Custome } from "./../../models";
 // import { RanchPrice } "./../../models";
 
 //import { useHistory } from "react-router-dom";
@@ -34,7 +34,7 @@ import {
   // SignUpBtn,
   StyleWrap,
 } from "./SignUpElements";
-import {makeStyles} from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import ImgBg from "../../images/cattle6.jpg";
 import Typography from "@material-ui/core/Typography";
 
@@ -96,8 +96,7 @@ const useStyles = makeStyles({
   registered: {
     marginTop: 40,
     color: "white",
-  }
-
+  },
 });
 
 const SignUp = (props) => {
@@ -127,25 +126,24 @@ const SignUp = (props) => {
   // }, []);
 
   const createCustomer = async (cust) => {
-    const newCust = await DataStore.save(new Custome(cust));
+    const newCust = { name: 'Jan' };/*await DataStore.save(new Custome(cust)); */
+
     setSaved(true);
     console.log(newCust);
   };
 
-
-
   const selectionChoice = () => {
     let index = props.location.state?.selection;
-    let choice = ""
-    if (index == 0) {
-      choice = "1/4 Beef"
-    } else if (index == 1) {
-      choice = "1/2 Beef"
-    } else if (index == 2) {
-      choice = "1 Beef"
+    let choice = "";
+    if (index === 0) {
+      choice = "1/4 Beef";
+    } else if (index === 1) {
+      choice = "1/2 Beef";
+    } else if (index === 2) {
+      choice = "1 Beef";
     }
     return choice;
-  }
+  };
   let choice = selectionChoice();
   function Form() {
     const {
@@ -157,9 +155,18 @@ const SignUp = (props) => {
     return (
       // {saved && (
       <>
-        <Typography variant="h5" className={classes.h1}>New Customer</Typography>
-        {choice && <Typography variant="h5" className={classes.choice}>Currently Selected: {choice}</Typography>}
-        <form className={classes.form} onSubmit={handleSubmit((data) => createCustomer(data))}>
+        <Typography variant="h5" className={classes.h1}>
+          New Customer
+        </Typography>
+        {choice && (
+          <Typography variant="h5" className={classes.choice}>
+            Currently Selected: {choice}
+          </Typography>
+        )}
+        <form
+          className={classes.form}
+          onSubmit={handleSubmit((data) => createCustomer(data))}
+        >
           {/* <form onSubmit={handleSubmit((data) => createCustomer(data))}> */}
           <label>Name</label>
           <TextField
@@ -195,7 +202,9 @@ const SignUp = (props) => {
             {...register("phone", { required: true })}
             placeholder="Telephone number"
           />
-          {errors.phone && <div className={classes.error}>Phone is required</div>}
+          {errors.phone && (
+            <div className={classes.error}>Phone is required</div>
+          )}
           <br />
           <label>Email</label>
           <TextField
@@ -203,7 +212,9 @@ const SignUp = (props) => {
             {...register("email", { required: true })}
             placeholder="Email address"
           />
-          {errors.email && <span className={classes.error}>Email is required</span>}
+          {errors.email && (
+            <span className={classes.error}>Email is required</span>
+          )}
           <br />
           {/* <InputLabel id="demo-simple-select-label">Beef</InputLabel> */}
           {/* <label>We are interested in:</label>
@@ -218,7 +229,7 @@ const SignUp = (props) => {
             <MenuItem value={4}>Whole beef</MenuItem>
           </Select> */}
           <br />
-          <Button className={classes.submitButton} type="submit" >
+          <Button className={classes.submitButton} type="submit">
             Submit
           </Button>
         </form>
@@ -245,8 +256,8 @@ const SignUp = (props) => {
       <Sidebar isOpen={isOpen} toggle={toggle} />
       {/*<SignUpContent>*/}
       {/*  <StyleWrap>*/}
-          <Form />
-        {/*</StyleWrap>*/}
+      <Form />
+      {/*</StyleWrap>*/}
       {/*</SignUpContent>*/}
     </div>
   );

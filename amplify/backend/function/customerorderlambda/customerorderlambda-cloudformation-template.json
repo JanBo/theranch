@@ -1,27 +1,28 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
-  "Description": "{\"createdOn\":\"Mac\",\"createdBy\":\"Amplify\",\"createdWith\":\"7.6.9\",\"stackType\":\"function-Lambda\",\"metadata\":{}}",
+  "Description": "{\"createdOn\":\"Mac\",\"createdBy\":\"Amplify\",\"createdWith\":\"7.6.15\",\"stackType\":\"function-Lambda\",\"metadata\":{}}",
   "Parameters": {
-    "env": {
-      "Type": "String"
-    },
-    "storageranchordersName": {
+    "CloudWatchRule": {
       "Type": "String",
-      "Default": "storageranchordersName"
-    },
-    "storageranchordersArn": {
-      "Type": "String",
-      "Default": "storageranchordersArn"
-    },
-    "storageranchordersStreamArn": {
-      "Type": "String",
-      "Default": "storageranchordersArn"
+      "Default": "NONE",
+      "Description": " Schedule Expression"
     },
     "deploymentBucketName": {
       "Type": "String"
     },
+    "env": {
+      "Type": "String"
+    },
     "s3Key": {
       "Type": "String"
+    },
+    "storagecustomerorderdbName": {
+      "Type": "String",
+      "Default": "storagecustomerorderdbName"
+    },
+    "storagecustomerorderdbArn": {
+      "Type": "String",
+      "Default": "storagecustomerorderdbArn"
     }
   },
   "Conditions": {
@@ -42,16 +43,24 @@
         "aws:asset:property": "Code"
       },
       "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "deploymentBucketName"
+          },
+          "S3Key": {
+            "Ref": "s3Key"
+          }
+        },
         "Handler": "index.handler",
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "ranchordersTrigger477dd50f",
+            "customerorderlambda",
             {
               "Fn::Join": [
                 "",
                 [
-                  "ranchordersTrigger477dd50f",
+                  "customerorderlambda",
                   "-",
                   {
                     "Ref": "env"
@@ -65,6 +74,9 @@
           "Variables": {
             "ENV": {
               "Ref": "env"
+            },
+            "REGION": {
+              "Ref": "AWS::Region"
             }
           }
         },
@@ -75,15 +87,8 @@
           ]
         },
         "Runtime": "nodejs14.x",
-        "Timeout": 25,
-        "Code": {
-          "S3Bucket": {
-            "Ref": "deploymentBucketName"
-          },
-          "S3Key": {
-            "Ref": "s3Key"
-          }
-        }
+        "Layers": [],
+        "Timeout": 25
       }
     },
     "LambdaExecutionRole": {
@@ -92,12 +97,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "ranchordersLambdaRole477dd50f",
+            "theranchLambdaRole6dbd195d",
             {
               "Fn::Join": [
                 "",
                 [
-                  "ranchordersLambdaRole477dd50f",
+                  "theranchLambdaRole6dbd195d",
                   "-",
                   {
                     "Ref": "env"
@@ -163,62 +168,37 @@
                   }
                 ]
               }
-            }
-          ]
-        }
-      }
-    },
-    "ranchordersTriggerPolicy": {
-      "DependsOn": [
-        "LambdaExecutionRole"
-      ],
-      "Type": "AWS::IAM::Policy",
-      "Properties": {
-        "PolicyName": "lambda-trigger-policy-ranchorders",
-        "Roles": [
-          {
-            "Ref": "LambdaExecutionRole"
-          }
-        ],
-        "PolicyDocument": {
-          "Version": "2012-10-17",
-          "Statement": [
+            },
             {
               "Effect": "Allow",
               "Action": [
-                "dynamodb:DescribeStream",
-                "dynamodb:GetRecords",
-                "dynamodb:GetShardIterator",
-                "dynamodb:ListStreams"
+                "dynamodb:DescribeTable",
+                "dynamodb:GetItem",
+                "dynamodb:Query",
+                "dynamodb:Scan",
+                "dynamodb:PutItem",
+                "dynamodb:UpdateItem",
+                "dynamodb:DeleteItem"
               ],
               "Resource": [
                 {
-                  "Ref": "storageranchordersStreamArn"
+                  "Ref": "storagecustomerorderdbArn"
+                },
+                {
+                  "Fn::Join": [
+                    "/",
+                    [
+                      {
+                        "Ref": "storagecustomerorderdbArn"
+                      },
+                      "index/*"
+                    ]
+                  ]
                 }
               ]
             }
           ]
         }
-      }
-    },
-    "ranchordersTrigger": {
-      "Type": "AWS::Lambda::EventSourceMapping",
-      "DependsOn": [
-        "ranchordersTriggerPolicy"
-      ],
-      "Properties": {
-        "BatchSize": 100,
-        "Enabled": true,
-        "EventSourceArn": {
-          "Ref": "storageranchordersStreamArn"
-        },
-        "FunctionName": {
-          "Fn::GetAtt": [
-            "LambdaFunction",
-            "Arn"
-          ]
-        },
-        "StartingPosition": "LATEST"
       }
     }
   },

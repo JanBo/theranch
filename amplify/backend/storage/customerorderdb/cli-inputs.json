@@ -1,0 +1,12 @@
+{
+  "resourceName": "customerorderdb",
+  "tableName": "customerorderdb",
+  "partitionKey": {
+    "fieldName": "name",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": [
+    "customerorderdbTrigger6f8efc4c"
+  ]
+}
