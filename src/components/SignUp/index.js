@@ -4,12 +4,7 @@ import { useForm } from "react-hook-form";
 // import { yupResolver } from "@hookform/resolvers/yup";
 // import * as Yup from "yup";
 
-// import './App.css';
-// import Container from '@material-ui/core/Container';
-// import Typography from '@material-ui/core/Typography';
-// import Box from '@material-ui/core/Box';
-// import { Button, Paper } from '@material-ui/core';
-// //import RecipeReviewCard from './components/RecipeReviewCard';
+
 import {
   Button,
   TextField,
@@ -48,7 +43,7 @@ import Typography from "@material-ui/core/Typography";
 const useStyles = makeStyles({
   container: {
     background: "#383434",
-    url: "(${ImgBg})",
+    url: "${ImgBg}",
     height: "100vh",
     backgroundPosition: "center",
     backgroundSize: "cover",

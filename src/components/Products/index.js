@@ -4,7 +4,7 @@ import Navbar from "../Navbar";
 import Sidebar from "../Sidebar";
 import { productData } from "./data";
 import { API } from "aws-amplify";
-import {makeStyles} from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Footer from "../../components/Footer";
 
 const useStyles = makeStyles({
@@ -70,15 +70,13 @@ const useStyles = makeStyles({
     background: "#e31837",
     color: "#fff",
     transition: "0.2 ease-out",
-    '&:hover': {
+    "&:hover": {
       background: "#ffc500",
       transition: "0.2s ease-out",
       cursor: "pointer",
       color: "#000",
-    }
+    },
   },
-
-
 });
 
 const Products = ({ heading }) => {
@@ -98,8 +96,8 @@ const Products = ({ heading }) => {
     let path = `/signup`;
     history.push({
       pathname: path,
-      state: {selection: ind}
-    })
+      state: { selection: ind },
+    });
   };
 
   useEffect(() => {
