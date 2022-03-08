@@ -17,6 +17,9 @@ const useStyles = makeStyles({
     maxHeight: "100%",
     padding: "0rem calc((100vw - 1300px) / 2)",
   },
+  a: {
+    color: "#FFFF00",
+  },
 });
 
 const AboutUs = () => {
@@ -25,6 +28,9 @@ const AboutUs = () => {
   const toggle = () => {
     setIsOpen(!isOpen);
   };
+
+  const s1 = "jaclyn@bamberranch.com";
+
   const p1 =
     "Welcome to Bamber Ranch! We are so pleased to share with you a treasure\n" +
     "        our family has enjoyed for decades. Bamber Ranch is a labor of love from\n" +
@@ -81,6 +87,9 @@ const AboutUs = () => {
           <br />
           <br />
         </Typography>
+        <a href={`mailto:${s1}?subject=Website email`}>
+          For questions for Bamber Ranch Customer Service
+        </a>
       </div>
     </div>
   );

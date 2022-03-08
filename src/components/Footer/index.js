@@ -1,11 +1,12 @@
-import React from 'react';
+import React from "react";
 import {
   FaFacebook,
   FaInstagram,
   FaYoutube,
   FaTwitter,
-  FaLinkedin
-} from 'react-icons/fa';
+  FaEnvelope,
+  FaLinkedin,
+} from "react-icons/fa";
 import {
   FooterContainer,
   FooterWrap,
@@ -13,8 +14,8 @@ import {
   SocialMediaWrap,
   SocialLogo,
   SocialIcons,
-  SocialIconLink
-} from './FooterElements';
+  SocialIconLink,
+} from "./FooterElements";
 
 const Footer = () => {
   return (
@@ -22,27 +23,49 @@ const Footer = () => {
       <FooterWrap>
         <SocialMedia>
           <SocialMediaWrap>
-            <SocialLogo to='/'>Connect with Bamber Ranch!</SocialLogo>
+            <SocialLogo to="/">Connect with Bamber Ranch!</SocialLogo>
             <SocialIcons>
-              <SocialIconLink href='https://www.facebook.com/groups/358534052395518' target='_blank' aria-label='Facebook'>
+              <SocialIconLink
+                href="https://www.facebook.com/groups/358534052395518"
+                target="_blank"
+                aria-label="Facebook"
+              >
                 <FaFacebook />
               </SocialIconLink>
-              <SocialIconLink href='/' target='_blank' aria-label='Instagram'>
+              <SocialIconLink href="/" target="_blank" aria-label="Instagram">
                 <FaInstagram />
               </SocialIconLink>
-              <SocialIconLink href='https://www.youtube.com/watch?v=2owfAf83eZo' target='_blank' aria-label='Youtube'>
+              <SocialIconLink
+                href="https://www.youtube.com/watch?v=2owfAf83eZo"
+                target="_blank"
+                aria-label="Youtube"
+              >
                 <FaYoutube />
               </SocialIconLink>
               <SocialIconLink
-                href='//www.twitter.com/briandesignz'
-                target='_blank'
-                aria-label='Twitter'
-                rel='noopener noreferrer'
+                href="//www.twitter.com/JanBirkelund"
+                target="_blank"
+                aria-label="Twitter"
+                rel="noopener noreferrer"
               >
                 <FaTwitter />
               </SocialIconLink>
-              <SocialIconLink href='/' target='_blank' aria-label='Linkedin'>
+              <SocialIconLink href="/" target="_blank" aria-label="Linkedin">
                 <FaLinkedin />
+              </SocialIconLink>
+              <SocialIconLink
+                href="https://www.facebook.com/groups/358534052395518"
+                target="_blank"
+                aria-label="Facebook"
+              >
+                <FaFacebook />
+              </SocialIconLink>
+              <SocialIconLink
+                href="mailto:jaclyn@bamberranch.com?subject=Website email"
+                target="_blank"
+                aria-label="Customer Service"
+              >
+                <FaEnvelope />
               </SocialIconLink>
             </SocialIcons>
           </SocialMediaWrap>
