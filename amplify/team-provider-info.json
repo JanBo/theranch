@@ -49,6 +49,26 @@
         "customerorderlambda": {
           "deploymentBucketName": "amplify-theranch-prod-145737-deployment",
           "s3Key": "amplify-builds/customerorderlambda-56554b594d73744e4233-build.zip"
+        },
+        "orderproductlambda": {
+          "deploymentBucketName": "amplify-theranch-prod-145737-deployment",
+          "s3Key": "amplify-builds/orderproductlambda-735946524d6e4b364e6f-build.zip"
+        },
+        "customerorderTrigger9c74b926": {
+          "deploymentBucketName": "amplify-theranch-prod-145737-deployment",
+          "s3Key": "amplify-builds/customerorderTrigger9c74b926-706d334a4d7a534f4c31-build.zip"
+        },
+        "customerOrderLambda": {
+          "deploymentBucketName": "amplify-theranch-prod-145737-deployment",
+          "s3Key": "amplify-builds/customerOrderLambda-676c794b7a68344b4845-build.zip"
+        },
+        "bestillingerdbTrigger25e6221e": {
+          "deploymentBucketName": "amplify-theranch-prod-145737-deployment",
+          "s3Key": "amplify-builds/bestillingerdbTrigger25e6221e-694e6d6b506f69452f78-build.zip"
+        },
+        "bestillingerlambda": {
+          "deploymentBucketName": "amplify-theranch-prod-145737-deployment",
+          "s3Key": "amplify-builds/bestillingerlambda-6251333557635770794e-build.zip"
         }
       }
     }

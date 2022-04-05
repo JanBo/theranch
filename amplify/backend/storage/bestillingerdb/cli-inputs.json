@@ -1,0 +1,12 @@
+{
+  "resourceName": "bestillingerdb",
+  "tableName": "bestillingerdb",
+  "partitionKey": {
+    "fieldName": "orderid",
+    "fieldType": "number"
+  },
+  "gsi": [],
+  "triggerFunctions": [
+    "bestillingerdbTrigger25e6221e"
+  ]
+}

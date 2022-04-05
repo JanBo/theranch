@@ -1,0 +1,12 @@
+{
+  "resourceName": "productorderdb",
+  "tableName": "productorderdb",
+  "partitionKey": {
+    "fieldName": "orderid",
+    "fieldType": "number"
+  },
+  "gsi": [],
+  "triggerFunctions": [
+    "productorderdbTrigger00c75a4d"
+  ]
+}

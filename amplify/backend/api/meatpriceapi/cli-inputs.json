@@ -13,6 +13,13 @@
       "permissions": {
         "setting": "open"
       }
+    },
+    "/orderproduct": {
+      "name": "/orderproduct",
+      "lambdaFunction": "orderproductlambda",
+      "permissions": {
+        "setting": "open"
+      }
     }
   }
 }

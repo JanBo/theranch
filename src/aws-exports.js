@@ -8,6 +8,11 @@ const awsmobile = {
             "name": "meatpriceapi",
             "endpoint": "https://gykqnetutd.execute-api.us-east-1.amazonaws.com/prod",
             "region": "us-east-1"
+        },
+        {
+            "name": "bestillinger",
+            "endpoint": "https://11nfplte8c.execute-api.us-east-1.amazonaws.com/prod",
+            "region": "us-east-1"
         }
     ],
     "aws_dynamodb_all_tables_region": "us-east-1",
@@ -18,6 +23,14 @@ const awsmobile = {
         },
         {
             "tableName": "customerorderdb-prod",
+            "region": "us-east-1"
+        },
+        {
+            "tableName": "productorderdb-prod",
+            "region": "us-east-1"
+        },
+        {
+            "tableName": "bestillingerdb-prod",
             "region": "us-east-1"
         }
     ],
