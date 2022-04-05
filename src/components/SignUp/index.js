@@ -103,7 +103,7 @@ const SignUp = (props) => {
   // const [prices, setPrices] = useState([]);
 
   useEffect(() => {
-    API.get("bestillingerlambda", "/order/productid").then((order) =>
+    API.get("bestillinger", "/order/productid?0").then((order) =>
       console.log(order)
     );
   }, []);
