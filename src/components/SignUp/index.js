@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
+import Amplify, { API } from "aws-amplify";
 //import InputMask from "react-input-mask";
-// import { yupResolver } from "@hookform/resolvers/yup";
-// import * as Yup from "yup";
-
 
 import {
   Button,
@@ -13,10 +11,6 @@ import {
   // MenuItem,
 } from "@material-ui/core";
 import { DataStore } from "@aws-amplify/datastore";
-//import { Custome } from "./../../models";
-// import { RanchPrice } "./../../models";
-
-//import { useHistory } from "react-router-dom";
 
 import Navbar from "../Navbar";
 import Sidebar from "../Sidebar";
@@ -33,17 +27,17 @@ import { makeStyles } from "@material-ui/core/styles";
 import ImgBg from "../../images/cattle6.jpg";
 import Typography from "@material-ui/core/Typography";
 
-// type FormData = {
-//   name: string,
-//   address: string,
-//   phone: string,
-//   email: string,
-// };
+type FormData = {
+  name: string,
+  address: string,
+  phone: string,
+  email: string,
+};
 
 const useStyles = makeStyles({
   container: {
     background: "#383434",
-    url: "${ImgBg}",
+    url: "$ImgBg",
     height: "100vh",
     backgroundPosition: "center",
     backgroundSize: "cover",
@@ -100,7 +94,6 @@ const SignUp = (props) => {
   const toggle = () => {
     setIsOpen(!isOpen);
   };
-  //const [custs, setCusts] = useState([]);
   const [saved, setSaved] = useState(false);
   // const [beef, setBeef] = useState("");
 
@@ -109,19 +102,19 @@ const SignUp = (props) => {
   // };
   // const [prices, setPrices] = useState([]);
 
-  // useEffect(() => {
-  //   const func = async () => {
-  //     const models = await DataStore.query(Custome);
-  //     setCusts(models);
-
-  //     // const pris = await DataStore.query(ranchprice);
-  //   };
+  useEffect(() => {
+    API.get("bestillingerlambda", "/order/productid").then((order) =>
+      console.log(order)
+    );
+  }, []);
 
   //   func();
   // }, []);
 
   const createCustomer = async (cust) => {
-    const newCust = { name: 'Jan' };/*await DataStore.save(new Custome(cust)); */
+    const newCust = {
+      name: "Jan",
+    }; /*await DataStore.save(new Custome(cust)); */
 
     setSaved(true);
     console.log(newCust);
@@ -148,7 +141,6 @@ const SignUp = (props) => {
     } = useForm();
 
     return (
-      // {saved && (
       <>
         <Typography variant="h5" className={classes.h1}>
           New Customer
@@ -163,7 +155,7 @@ const SignUp = (props) => {
           onSubmit={handleSubmit((data) => createCustomer(data))}
         >
           {/* <form onSubmit={handleSubmit((data) => createCustomer(data))}> */}
-          <label>Name</label>
+          <label>Navn</label>
           <TextField
             onChange={() => setSaved(false)}
             {...register("name", { required: true, maxLength: 40 })}
@@ -211,18 +203,6 @@ const SignUp = (props) => {
             <span className={classes.error}>Email is required</span>
           )}
           <br />
-          {/* <InputLabel id="demo-simple-select-label">Beef</InputLabel> */}
-          {/* <label>We are interested in:</label>
-          <Select
-            id="demo-simple-select"
-            value={beef}
-            label="beef"
-            onChange={handleChange}
-          >
-            <MenuItem value={1}>Quarter beef</MenuItem>
-            <MenuItem value={2}>Half beef</MenuItem>
-            <MenuItem value={4}>Whole beef</MenuItem>
-          </Select> */}
           <br />
           <Button className={classes.submitButton} type="submit">
             Submit

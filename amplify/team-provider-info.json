@@ -68,7 +68,7 @@
         },
         "bestillingerlambda": {
           "deploymentBucketName": "amplify-theranch-prod-145737-deployment",
-          "s3Key": "amplify-builds/bestillingerlambda-6251333557635770794e-build.zip"
+          "s3Key": "amplify-builds/bestillingerlambda-387a784b663256676f54-build.zip"
         }
       }
     }
