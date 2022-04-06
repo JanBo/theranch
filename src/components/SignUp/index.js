@@ -103,9 +103,7 @@ const SignUp = (props) => {
   // const [prices, setPrices] = useState([]);
 
   useEffect(() => {
-    API.post("ordersapi", "/orders/orderid").then((order) =>
-      console.log(order)
-    );
+    API.get("ordersapi", "/orders/orderid").then((order) => console.log(order));
   }, []);
 
   //   func();
