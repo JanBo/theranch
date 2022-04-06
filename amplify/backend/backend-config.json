@@ -29,20 +29,6 @@
           ]
         }
       ]
-    },
-    "bestillinger": {
-      "service": "API Gateway",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [
-        {
-          "category": "function",
-          "resourceName": "bestillingerlambda",
-          "attributes": [
-            "Name",
-            "Arn"
-          ]
-        }
-      ]
     }
   },
   "function": {
@@ -102,41 +88,6 @@
           }
         }
       ]
-    },
-    "bestillingerdbTrigger25e6221e": {
-      "service": "Lambda",
-      "providerPlugin": "awscloudformation",
-      "build": true,
-      "dependsOn": [
-        {
-          "category": "storage",
-          "resourceName": "bestillingerdb",
-          "attributes": [
-            "Name",
-            "Arn",
-            "StreamArn"
-          ]
-        }
-      ]
-    },
-    "bestillingerlambda": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda",
-      "dependsOn": [
-        {
-          "category": "storage",
-          "resourceName": "bestillingerdb",
-          "attributes": [
-            "Name",
-            "Arn"
-          ],
-          "attributeEnvMap": {
-            "Name": "TABLE_NAME",
-            "Arn": "TABLE_ARN"
-          }
-        }
-      ]
     }
   },
   "storage": {
@@ -149,10 +100,6 @@
       "providerPlugin": "awscloudformation"
     },
     "productorderdb": {
-      "service": "DynamoDB",
-      "providerPlugin": "awscloudformation"
-    },
-    "bestillingerdb": {
       "service": "DynamoDB",
       "providerPlugin": "awscloudformation"
     }
