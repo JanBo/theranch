@@ -4,6 +4,11 @@ export type AmplifyDependentResourcesAttributes = {
             "RootUrl": "string",
             "ApiName": "string",
             "ApiId": "string"
+        },
+        "ordersapi": {
+            "RootUrl": "string",
+            "ApiName": "string",
+            "ApiId": "string"
         }
     },
     "function": {
@@ -20,6 +25,18 @@ export type AmplifyDependentResourcesAttributes = {
             "LambdaExecutionRole": "string"
         },
         "orderproductlambda": {
+            "Name": "string",
+            "Arn": "string",
+            "Region": "string",
+            "LambdaExecutionRole": "string"
+        },
+        "ordersdbTrigger9bb88fcb": {
+            "Name": "string",
+            "Arn": "string",
+            "Region": "string",
+            "LambdaExecutionRole": "string"
+        },
+        "ordersfunction": {
             "Name": "string",
             "Arn": "string",
             "Region": "string",
@@ -46,6 +63,14 @@ export type AmplifyDependentResourcesAttributes = {
             "Region": "string"
         },
         "productorderdb": {
+            "Name": "string",
+            "Arn": "string",
+            "StreamArn": "string",
+            "PartitionKeyName": "string",
+            "PartitionKeyType": "string",
+            "Region": "string"
+        },
+        "ordersdb": {
             "Name": "string",
             "Arn": "string",
             "StreamArn": "string",

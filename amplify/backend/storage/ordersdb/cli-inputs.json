@@ -1,0 +1,12 @@
+{
+  "resourceName": "ordersdb",
+  "tableName": "ordersdb",
+  "partitionKey": {
+    "fieldName": "orderid",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": [
+    "ordersdbTrigger9bb88fcb"
+  ]
+}
