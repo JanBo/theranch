@@ -26,6 +26,8 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 import ImgBg from "../../images/cattle6.jpg";
 import Typography from "@material-ui/core/Typography";
+import { string } from "yup";
+import { Today } from "@mui/icons-material";
 
 type FormData = {
   name: string,
@@ -90,32 +92,53 @@ const useStyles = makeStyles({
 
 const SignUp = (props) => {
   const [isOpen, setIsOpen] = useState(false);
+
   const classes = useStyles();
   const toggle = () => {
     setIsOpen(!isOpen);
   };
   const [saved, setSaved] = useState(false);
-  // const [beef, setBeef] = useState("");
-
-  // const handleChange = (event) => {
-  //   setBeef(event.target.value);
-  // };
-  // const [prices, setPrices] = useState([]);
 
   useEffect(() => {
     API.get("ordersapi", "/orders/orderid").then((order) => console.log(order));
   }, []);
 
-  //   func();
-  // }, []);
+  type FormValues = {
+    orderid: string,
+    product: string,
+    price: Number,
+    name: string,
+    address: string,
+    phone: string,
+    email: string,
+    comment: string,
+  };
 
-  const createCustomer = async (cust) => {
-    const newCust = {
-      name: "Jan",
-    }; /*await DataStore.save(new Custome(cust)); */
+  const onError = () => {
+    console.log("wrong");
+  };
 
-    setSaved(true);
-    console.log(newCust);
+  const onSubmit = (data: FormValues) => {
+    const current = new Date();
+    const dato =
+      current.getFullYear() + "-" + current.getMonth() + "-" + current.getDay();
+    let orderidstr = data.name + dato;
+    console.log(orderidstr);
+
+    const values = API.post("ordersapi", "/orders", {
+      body: {
+        orderid: data.name + dato,
+        product: choice,
+        price: data.price,
+        name: data.name,
+        address: data.address,
+        phone: data.phone,
+        email: data.email,
+        comment: "my nice comment",
+      },
+    });
+
+    console.log("Saved updated customer record to dynamodb");
   };
 
   const selectionChoice = () => {
@@ -131,6 +154,7 @@ const SignUp = (props) => {
     return choice;
   };
   let choice = selectionChoice();
+
   function Form() {
     const {
       register,
@@ -150,10 +174,9 @@ const SignUp = (props) => {
         )}
         <form
           className={classes.form}
-          onSubmit={handleSubmit((data) => createCustomer(data))}
+          onSubmit={handleSubmit(onSubmit, onError)}
         >
-          {/* <form onSubmit={handleSubmit((data) => createCustomer(data))}> */}
-          <label>Navn</label>
+          <label>Name</label>
           <TextField
             onChange={() => setSaved(false)}
             {...register("name", { required: true, maxLength: 40 })}
