@@ -150,7 +150,10 @@ const SignUp = (props) => {
       choice = "1/2 Beef";
     } else if (index === 2) {
       choice = "1 Beef";
+    } else {
+      choice = "No selection";
     }
+
     return choice;
   };
   let choice = selectionChoice();

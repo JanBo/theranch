@@ -92,11 +92,11 @@ const Products = ({ heading }) => {
     setIsOpen(!isOpen);
   };
 
-  const routeChange = (ind) => {
+  const routeChange = (ind, price) => {
     let path = `/signup`;
     history.push({
       pathname: path,
-      state: { selection: ind },
+      state: { selection: ind, pris: price },
     });
   };
 
@@ -139,7 +139,9 @@ const Products = ({ heading }) => {
                   </div>
                   <div
                     className={classes.button}
-                    onClick={() => routeChange(index)}
+                    onClick={() =>
+                      routeChange(index, quarterPrice, halfPrice, wholePrice)
+                    }
                   >
                     {product.button}
                   </div>
