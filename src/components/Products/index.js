@@ -82,33 +82,22 @@ const useStyles = makeStyles({
 const Products = ({ heading }) => {
   const [isOpen, setIsOpen] = useState(false);
   const classes = useStyles();
-  const [selection, setSelection] = useState("");
-  const [quarterPrice, setQuarterPrice] = useState(0);
-  const [halfPrice, setHalfPrice] = useState(0);
-  const [wholePrice, setWholePrice] = useState(0);
   const history = useHistory();
 
   const toggle = () => {
     setIsOpen(!isOpen);
   };
 
-  const routeChange = (ind, price) => {
+  const routeChange = (amount, price) => {
     let path = `/signup`;
     history.push({
       pathname: path,
-      state: { selection: ind, pris: price },
+      state: { amount: amount, pris: price },
     });
   };
 
   useEffect(() => {
     API.get("meatpriceapi", "/meatprice/type")
-      .then((response) => {
-        for (const item of response) {
-          if (item.type === "QUARTER") setQuarterPrice(item.price);
-          if (item.type === "HALF") setHalfPrice(item.price);
-          if (item.type === "WHOLE") setWholePrice(item.price);
-        }
-      })
       .catch((error) => {
         console.log(error.response);
       });
@@ -133,15 +122,11 @@ const Products = ({ heading }) => {
                   <div className={classes.title}>{product.name}</div>
                   <div className={classes.desc}>{product.desc}</div>
                   <div className={classes.price}>
-                    {index === 0 && quarterPrice > 0 && `$${quarterPrice}`}
-                    {index === 1 && halfPrice > 0 && `$${halfPrice}`}
-                    {index === 2 && wholePrice > 0 && `$${wholePrice}`}
+                    {product.price}
                   </div>
                   <div
                     className={classes.button}
-                    onClick={() =>
-                      routeChange(index, quarterPrice, halfPrice, wholePrice)
-                    }
+                    onClick={() => routeChange(product.name, product.price)}
                   >
                     {product.button}
                   </div>

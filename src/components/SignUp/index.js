@@ -51,7 +51,6 @@ const useStyles = makeStyles({
     textAlign: "center",
   },
   choice: {
-    color: "#e31837",
     fontWeight: 600,
     padding: "10px",
     textAlign: "center",
@@ -79,6 +78,7 @@ const useStyles = makeStyles({
     filter: "drop-shadow(0.2rem 0.2rem 0.3rem rgba(0, 0, 0, 0.3))",
     background: "#e31837",
     color: "#fff",
+    marginTop: 20,
     // backgroundColor: "#6976d9",
     // color: "white",
     fontFamily: "sans-serif",
@@ -106,7 +106,7 @@ const SignUp = (props) => {
   type FormValues = {
     orderid: string,
     product: string,
-    price: Number,
+    price: string,
     name: string,
     address: string,
     phone: string,
@@ -128,8 +128,8 @@ const SignUp = (props) => {
     const values = API.post("ordersapi", "/orders", {
       body: {
         orderid: data.name + dato,
-        product: choice,
-        price: data.price,
+        product: props.amount,
+        price: props.price,
         name: data.name,
         address: data.address,
         phone: data.phone,
@@ -141,22 +141,23 @@ const SignUp = (props) => {
     console.log("Saved updated customer record to dynamodb");
   };
 
-  const selectionChoice = () => {
-    let index = props.location.state?.selection;
-    let choice = "";
-    if (index === 0) {
-      choice = "1/4 Beef";
-    } else if (index === 1) {
-      choice = "1/2 Beef";
-    } else if (index === 2) {
-      choice = "1 Beef";
-    } else {
-      choice = "No selection";
-    }
 
-    return choice;
-  };
-  let choice = selectionChoice();
+  // const selectionChoice = () => {
+  //   let index = props.location.state?.selection;
+  //   let choice = "";
+  //   if (index === 0) {
+  //     choice = "1/4 Beef";
+  //   } else if (index === 1) {
+  //     choice = "1/2 Beef";
+  //   } else if (index === 2) {
+  //     choice = "1 Beef";
+  //   } else {
+  //     choice = "No selection";
+  //   }
+  //
+  //   return choice;
+  // };
+  // let choice = selectionChoice();
 
   function Form() {
     const {
@@ -170,10 +171,12 @@ const SignUp = (props) => {
         <Typography variant="h5" className={classes.h1}>
           New Customer
         </Typography>
-        {choice && (
-          <Typography variant="h5" className={classes.choice}>
-            Currently Selected: {choice}
-          </Typography>
+        {props.location.state?.amount && (
+          <>
+            <Typography variant="h5" className={classes.choice} style={{color: "#e31837"}}>
+              Currently Selected: {props.location.state?.amount}
+            </Typography>
+          </>
         )}
         <form
           className={classes.form}
@@ -226,8 +229,7 @@ const SignUp = (props) => {
           {errors.email && (
             <span className={classes.error}>Email is required</span>
           )}
-          <br />
-          <br />
+          {props.location.state?.pris && <Typography style={{marginTop: 20}}>Price: {props.location.state?.pris}</Typography>}
           <Button className={classes.submitButton} type="submit">
             Submit
           </Button>
