@@ -82,7 +82,17 @@ const useStyles = makeStyles({
 const Products = ({ heading }) => {
   const [isOpen, setIsOpen] = useState(false);
   const classes = useStyles();
+  const [quarterPrice, setQuarterPrice] = useState(0);
+  const [halfPrice, setHalfPrice] = useState(0);
+  const [wholePrice, setWholePrice] = useState(0);
   const history = useHistory();
+
+  const getPrice = (index) => {
+    if (index === 0 && quarterPrice > 0) return quarterPrice;
+    if (index === 1 && halfPrice > 0) return halfPrice;
+    if (index === 2 && wholePrice > 0) return wholePrice;
+    else return 0;
+  };
 
   const toggle = () => {
     setIsOpen(!isOpen);
@@ -98,6 +108,13 @@ const Products = ({ heading }) => {
 
   useEffect(() => {
     API.get("meatpriceapi", "/meatprice/type")
+      .then((response) => {
+        for (const item of response) {
+          if (item.type === "QUARTER") setQuarterPrice(item.price);
+          if (item.type === "HALF") setHalfPrice(item.price);
+          if (item.type === "WHOLE") setWholePrice(item.price);
+        }
+      })
       .catch((error) => {
         console.log(error.response);
       });
@@ -121,12 +138,10 @@ const Products = ({ heading }) => {
                 <div className={classes.productInfo}>
                   <div className={classes.title}>{product.name}</div>
                   <div className={classes.desc}>{product.desc}</div>
-                  <div className={classes.price}>
-                    {product.price}
-                  </div>
+                  <div className={classes.price}>{getPrice(index)}</div>
                   <div
                     className={classes.button}
-                    onClick={() => routeChange(product.name, product.price)}
+                    onClick={() => routeChange(product.name, getPrice(index))}
                   >
                     {product.button}
                   </div>

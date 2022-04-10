@@ -128,8 +128,8 @@ const SignUp = (props) => {
     const values = API.post("ordersapi", "/orders", {
       body: {
         orderid: data.name + dato,
-        product: props.amount,
-        price: props.price,
+        product: props.location.state?.amount,
+        price: props.location.state?.pris,
         name: data.name,
         address: data.address,
         phone: data.phone,
@@ -137,27 +137,9 @@ const SignUp = (props) => {
         comment: "my nice comment",
       },
     });
-
+    setSaved(true);
     console.log("Saved updated customer record to dynamodb");
   };
-
-
-  // const selectionChoice = () => {
-  //   let index = props.location.state?.selection;
-  //   let choice = "";
-  //   if (index === 0) {
-  //     choice = "1/4 Beef";
-  //   } else if (index === 1) {
-  //     choice = "1/2 Beef";
-  //   } else if (index === 2) {
-  //     choice = "1 Beef";
-  //   } else {
-  //     choice = "No selection";
-  //   }
-  //
-  //   return choice;
-  // };
-  // let choice = selectionChoice();
 
   function Form() {
     const {
@@ -173,7 +155,11 @@ const SignUp = (props) => {
         </Typography>
         {props.location.state?.amount && (
           <>
-            <Typography variant="h5" className={classes.choice} style={{color: "#e31837"}}>
+            <Typography
+              variant="h5"
+              className={classes.choice}
+              style={{ color: "#e31837" }}
+            >
               Currently Selected: {props.location.state?.amount}
             </Typography>
           </>
@@ -229,7 +215,11 @@ const SignUp = (props) => {
           {errors.email && (
             <span className={classes.error}>Email is required</span>
           )}
-          {props.location.state?.pris && <Typography style={{marginTop: 20}}>Price: {props.location.state?.pris}</Typography>}
+          {props.location.state?.pris && (
+            <Typography style={{ marginTop: 20 }}>
+              Price: {props.location.state?.pris}
+            </Typography>
+          )}
           <Button className={classes.submitButton} type="submit">
             Submit
           </Button>
