@@ -7,6 +7,7 @@ import Gallery from "./components/Gallery";
 import AboutUs from "./components/AboutUs";
 import SignUp from "./components/SignUp";
 import Testimonial from "./components/Testimonial";
+import FAQ from "./components/Faq";
 import CreditCard from "./components/CreditCard";
 
 import "./App.css";
@@ -28,6 +29,7 @@ function App() {
         {/*heading="Choose your favorite" data={productData} */}
         <Route path="/gallery" component={Gallery} />
         <Route path="/testimonial" component={Testimonial} />
+        <Route path="/faq" component={FAQ} />
         <Route path="/creditcard" component={CreditCard} />
         <Route path="/aboutus" component={AboutUs} />
         <Route path="/signup" component={SignUp} />

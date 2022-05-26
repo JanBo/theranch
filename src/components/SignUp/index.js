@@ -17,10 +17,6 @@ import Sidebar from "../Sidebar";
 import {
   SignUpContainer,
   SignUpContent,
-  // SignUpItems,
-  // SignUpH1,
-  // SignUpP,
-  // SignUpBtn,
   StyleWrap,
 } from "./SignUpElements";
 import { makeStyles } from "@material-ui/core/styles";

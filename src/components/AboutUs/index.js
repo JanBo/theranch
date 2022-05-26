@@ -13,6 +13,8 @@ const useStyles = makeStyles({
   },
   content: {
     marginTop: 50,
+    marginLeft: 20,
+    marginRight: 20,
     height: "calc(100vh - 80px)",
     maxHeight: "100%",
     padding: "0rem calc((100vw - 1300px) / 2)",

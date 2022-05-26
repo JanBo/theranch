@@ -138,7 +138,7 @@ const Products = ({ heading }) => {
                 <div className={classes.productInfo}>
                   <div className={classes.title}>{product.name}</div>
                   <div className={classes.desc}>{product.desc}</div>
-                  <div className={classes.price}>{getPrice(index)}</div>
+                  <div className={classes.price}>${getPrice(index)} + tax</div>
                   <div
                     className={classes.button}
                     onClick={() => routeChange(product.name, getPrice(index))}
