@@ -26,17 +26,21 @@ const Footer = () => {
             <SocialLogo to="/">Connect with Bamber Ranch!</SocialLogo>
             <SocialIcons>
               <SocialIconLink
-                href="https://www.facebook.com/groups/358534052395518"
+                href="https://www.facebook.com/groups/1085591925548380"
                 target="_blank"
                 aria-label="Facebook"
               >
                 <FaFacebook />
               </SocialIconLink>
-              <SocialIconLink href="/" target="_blank" aria-label="Instagram">
+              <SocialIconLink
+                href="https://www.instagram.com/bamberranch/"
+                target="_blank"
+                aria-label="Instagram"
+              >
                 <FaInstagram />
               </SocialIconLink>
               <SocialIconLink
-                href="https://www.youtube.com/watch?v=2owfAf83eZo"
+                href="https://www.youtube.com/watch?v=Vsbw66lVTDU"
                 target="_blank"
                 aria-label="Youtube"
               >
