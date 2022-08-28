@@ -90,7 +90,7 @@ const AboutUs = () => {
           <br />
         </Typography>
         <a href={`mailto:${s1}?subject=Website email`}>
-          For questions for Bamber Ranch Customer Service
+          Email Bamber Ranch Customer Service with questions!
         </a>
       </div>
     </div>
