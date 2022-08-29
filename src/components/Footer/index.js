@@ -54,16 +54,14 @@ const Footer = () => {
               >
                 <FaTwitter />
               </SocialIconLink>
-              <SocialIconLink href="/" target="_blank" aria-label="Linkedin">
+              <SocialIconLink
+                href="https://www.linkedin.com/company/bamber-ranch"
+                target="_blank"
+                aria-label="Linkedin"
+              >
                 <FaLinkedin />
               </SocialIconLink>
-              <SocialIconLink
-                href="https://www.facebook.com/groups/358534052395518"
-                target="_blank"
-                aria-label="Facebook"
-              >
-                <FaFacebook />
-              </SocialIconLink>
+
               <SocialIconLink
                 href="mailto:jaclyn@bamberranch.com?subject=Website email"
                 target="_blank"
