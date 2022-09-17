@@ -1,6 +1,8 @@
 import product1 from "../../images/product-1.jpg";
 import product2 from "../../images/product-2.jpg";
 import product3 from "../../images/product-3.jpg";
+import product4 from "../../images/product-3.jpg";
+import product5 from "../../images/product-2.jpg";
 
 export const productData = [
   {
@@ -25,6 +27,22 @@ export const productData = [
     name: "1 Beef",
     desc: " A whole of a beef typically is about 420lbs of premium cuts and hamburger",
     price: "$3495.99",
+    button: "Add to Cart",
+  },
+  {
+    img: product4,
+    alt: "Eighth Beef",
+    name: "1/8 Beef",
+    desc: "A eighth of a beef typically is about 52lbs of premium cuts and hamburger",
+    price: "$595.00",
+    button: "Add to Cart",
+  },
+  {
+    img: product5,
+    alt: "Custom Cut Box",
+    name: "Custom Cut Box",
+    desc: "2 tenderloin filets 1 short ribs 1 top sirloin 2 NY strips 1 flat iron steak 12lbs ground beef",
+    price: "$243.00",
     button: "Add to Cart",
   },
 ];

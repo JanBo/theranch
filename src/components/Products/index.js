@@ -85,12 +85,17 @@ const Products = ({ heading }) => {
   const [quarterPrice, setQuarterPrice] = useState(0);
   const [halfPrice, setHalfPrice] = useState(0);
   const [wholePrice, setWholePrice] = useState(0);
+  const [eighthPrice, setEighthPrice] = useState(0);
+  const [customBoxPrice, setCustomBoxPrice] = useState(0);
+
   const history = useHistory();
 
   const getPrice = (index) => {
     if (index === 0 && quarterPrice > 0) return quarterPrice;
     if (index === 1 && halfPrice > 0) return halfPrice;
     if (index === 2 && wholePrice > 0) return wholePrice;
+    if (index === 3 && eighthPrice > 0) return eighthPrice;
+    if (index === 4 && customBoxPrice > 0) return customBoxPrice;
     else return 0;
   };
 
@@ -113,6 +118,8 @@ const Products = ({ heading }) => {
           if (item.type === "QUARTER") setQuarterPrice(item.price);
           if (item.type === "HALF") setHalfPrice(item.price);
           if (item.type === "WHOLE") setWholePrice(item.price);
+          if (item.type === "CUSTOMBOX") setCustomBoxPrice(item.price);
+          if (item.type === "EIGHTH") setEighthPrice(item.price);
         }
       })
       .catch((error) => {
