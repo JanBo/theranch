@@ -91,9 +91,9 @@ const Products = ({ heading }) => {
   const history = useHistory();
 
   const getPrice = (index) => {
-    if (index === 0 && quarterPrice > 0) return quarterPrice;
+    if (index === 0 && wholePrice > 0) return wholePrice;
     if (index === 1 && halfPrice > 0) return halfPrice;
-    if (index === 2 && wholePrice > 0) return wholePrice;
+    if (index === 2 && quarterPrice > 0) return quarterPrice;
     if (index === 3 && eighthPrice > 0) return eighthPrice;
     if (index === 4 && customBoxPrice > 0) return customBoxPrice;
     else return 0;
