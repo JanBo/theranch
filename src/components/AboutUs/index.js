@@ -4,6 +4,10 @@ import Sidebar from "../Sidebar";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 
+import cattle from "../../images/cattle.jpg";
+import bamberranch from "../../images/bamberranch.jpg";
+import cattle6 from "../../images/cattle4.jpg";
+
 const useStyles = makeStyles({
   container: {
     minHeight: "100vh",
@@ -93,6 +97,13 @@ const AboutUs = () => {
           Email Bamber Ranch Customer Service with questions!
         </a>
       </div>
+      <img src={require("./../../images/bamberranch.jpg")} alt="ranch logo" />
+      <img
+        src={require("./../../images/cattle.jpg")}
+        width={500}
+        height={500}
+        alt="ranch cattle"
+      />
     </div>
   );
 };

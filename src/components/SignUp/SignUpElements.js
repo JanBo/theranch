@@ -8,7 +8,7 @@ export const StyleWrap = styled.div`
  h1 {
    border-bottom: 1px solid white;
    color: #3d3d3d;
-   font-family: sans-serif;
+   font-family: Roboto Condensed,sans-serif;
    font-size: 20px;
    font-weight: 600;
    // line-height: 24px;
@@ -30,7 +30,7 @@ export const StyleWrap = styled.div`
 
  .error {
    color: red;
-   font-family: sans-serif;
+   font-family: Roboto Condensed,sans-serif;
    font-size: 12px;
    height: 30px;
  }
@@ -38,7 +38,7 @@ export const StyleWrap = styled.div`
  .submitButton {
    background-color: #6976d9;
    color: white;
-   font-family: sans-serif;
+   font-family: Roboto Condensed,sans-serif;
    font-size: 14px;
    margin: 20px 0px;
 `;
@@ -50,6 +50,8 @@ export const SignUpContainer = styled.div`
   background-position: center;
   background-size: cover;
 `;
+
+// font-family: sans-serif;
 
 export const SignUpContent = styled.div`
   // height: calc(100vh - 80px);
