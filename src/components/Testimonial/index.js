@@ -10,7 +10,7 @@ import Sidebar from "../Sidebar";
 const useStyles = makeStyles({
   root: {
     minWidth: 300,
-    borderRadius: '10px',
+    borderRadius: "10px",
     filter: "drop-shadow(0.45rem 0.45rem 0.4rem rgba(0, 0, 0, 0.4))",
   },
   bullet: {
@@ -19,7 +19,7 @@ const useStyles = makeStyles({
     transform: "scale(0.8)",
   },
   title: {
-    fontWeight: 600
+    fontWeight: 600,
   },
   pos: {
     marginBottom: 12,
@@ -35,7 +35,7 @@ const useStyles = makeStyles({
     height: "calc(100vh - 80px)",
     maxHeight: "100%",
     padding: "0rem calc((100vw - 1300px) / 2)",
-  }
+  },
 });
 
 const Testimonial = () => {
@@ -46,21 +46,21 @@ const Testimonial = () => {
   };
 
   function OutlinedCard({ title, kropp, signatur }) {
-
     //const bull = <span className={classes.bullet}>•</span>;
 
     return (
       <Card className={classes.root} raised="true" variant="outlined">
         <CardContent>
-          <Typography className={classes.title} variant="h6">{title}</Typography>
-            <br />
+          <Typography className={classes.title} variant="h6">
+            {title}
+          </Typography>
+          <br />
 
           <Typography variant="body1">{kropp}</Typography>
-            <br />
-            <br />
+          <br />
+          <br />
           <Typography variant="body1">{signatur}</Typography>
-            <br />
-
+          <br />
         </CardContent>
       </Card>
     );
@@ -71,6 +71,30 @@ const Testimonial = () => {
       <Navbar toggle={toggle} />
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <div className={classes.content}>
+        <OutlinedCard
+          title="Noticeably better!"
+          kropp="I feed my family only Bamber Ranch beef. 
+          The taste is noticably better than anything else we have experienced"
+          signatur="Shannon F"
+        />
+        <br />
+        <br />
+        <OutlinedCard
+          title="Only the good stuff!"
+          kropp="I only eat growth hormone and steroid free meat. 
+          I know that is what I get with Bamber Ranch"
+          signatur="Catharine"
+        />
+        <br />
+        <br />
+        <OutlinedCard
+          title="Where it comes from counts"
+          kropp="It gives me great peace of mind to know exactly where the meat 
+          we are eating comes from,"
+          signatur="Shaw"
+        />
+        <br />
+        <br />
         <OutlinedCard
           title="We have loved the steak we purchased from Bamber Ranch"
           kropp="
@@ -95,7 +119,6 @@ const Testimonial = () => {
         />
         <br />
         <br />
-
         <OutlinedCard
           title="Simply fantastic"
           kropp="The steaks taste sooo good and the ground meat is lean. 
