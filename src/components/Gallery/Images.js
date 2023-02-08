@@ -31,7 +31,7 @@ export const Images = [
   },
   {
     image:
-      "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_0703.jpeg",
+      "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_2787.jpg",
   },
   {
     image:
@@ -39,15 +39,15 @@ export const Images = [
   },
   {
     image:
-      "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_2498.jpeg",
-  },
-  {
-    image:
-      "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_9236.jpeg",
+      "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_3432.jpg",
   },
   {
     image:
       "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_3816.jpeg",
+  },
+  {
+    image:
+      "https://bamberranch2021.s3.us-east-2.amazonaws.com/images/IMG_9236.jpeg",
   },
   {
     image:
